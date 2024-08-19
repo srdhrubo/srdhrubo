@@ -48,8 +48,8 @@ const links = {
 
 export default function NavigationBar() {
   return (
-    <div className="flex items-center justify-between w-full py-4">
-      <Link href="/">
+    <div className="flex items-center justify-between w-full py-4 h-[4.5rem]">
+      <Link href="/" className="z-10">
         <Image src={logo} alt="Logo" width={40} />
       </Link>
       <NavigationMenu>
@@ -117,10 +117,10 @@ export default function NavigationBar() {
                   ))}
                   <li className="flex gap-4 pl-4">
                     <Button>
-                      CV <DownloadIcon className="w-4" />
+                      CV <DownloadIcon className="w-4 ml-2" />
                     </Button>
                     <Button>
-                      Resume <DownloadIcon className="w-4" />
+                      RESUME <DownloadIcon className="w-4 ml-2" />
                     </Button>
                   </li>
                 </div>

@@ -48,7 +48,7 @@ const links = {
 
 export default function NavigationBar() {
   return (
-    <div className="flex items-center justify-between w-full py-4 h-[4.5rem]">
+    <div className="p-global-padding flex items-center justify-between w-full py-4 h-[4.5rem]">
       <Link href="/" className="z-10">
         <Image src={logo} alt="Logo" width={40} />
       </Link>

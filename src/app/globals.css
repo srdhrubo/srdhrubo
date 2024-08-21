@@ -67,3 +67,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom global padding */
+:root {
+  --global-padding: 0rem 1rem; /* default padding */
+}
+
+@media (min-width: 768px) {
+  :root {
+    --global-padding: 0rem 2.5rem; /* md screen padding */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --global-padding: 0rem 11rem; /* lg screen padding */
+  }
+}

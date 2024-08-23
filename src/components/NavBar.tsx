@@ -32,8 +32,9 @@ const links = {
     { href: "/academic", title: "Academic" },
     { href: "/standardized-test-results", title: "Standardized Test Results" },
   ],
-  research_experience: [
+  experience: [
     { href: "/research", title: "Research" },
+    { href: "/professional", title: "Professional" },
     { href: "/projects", title: "Projects" },
   ],
   affiliation: [
@@ -41,6 +42,7 @@ const links = {
     { href: "/co-curriculars", title: "Co-curricular Activities" },
   ],
   more: [
+    { href: "/contacts", title: "Contact Details" },
     { href: "/about", title: "About Me" },
     { href: "/references", title: "References" },
   ],
@@ -69,10 +71,10 @@ export default function NavigationBar() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Research</NavigationMenuTrigger>
+            <NavigationMenuTrigger>Experience</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-6 w-[450px]">
-                {links.research_experience.map((link) => (
+                {links.experience.map((link) => (
                   <ListItem
                     href={link.href}
                     title={link.title}

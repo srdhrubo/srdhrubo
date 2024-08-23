@@ -3,7 +3,6 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { DownloadIcon, Pointer } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import hero_image from "../../public/hero-image.png";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import {
   Card,
@@ -27,7 +26,7 @@ export default function Home() {
             <br />
             Meet Suchinto Roy Dhrubo
             <br />
-            <FlipWords words={attributes} />
+            <FlipWords words={attributes} className="font-semibold" />
           </div>
           <div className="space-y-4">
             <div className="space-x-5">
@@ -51,7 +50,12 @@ export default function Home() {
           </div>
         </div>
         <div className="hidden md:block">
-          <Image src={hero_image} alt="image of shuchinto roy dhrubo" />
+          <Image
+            src="/hero-image.png"
+            alt="image of shuchinto roy dhrubo"
+            width={400}
+            height={400}
+          />
         </div>
       </WavyBackground>
       <div className="dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2]">

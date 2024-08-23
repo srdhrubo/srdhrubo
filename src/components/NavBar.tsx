@@ -52,7 +52,7 @@ export default function NavigationBar() {
   return (
     <div className="p-global-padding flex items-center justify-between w-full py-4 h-[4.5rem]">
       <Link href="/" className="z-10">
-        <Image src={logo} alt="Logo" width={40} />
+        <Image src="/logo.png" alt="Logo" width={40} height={40} />
       </Link>
       <NavigationMenu>
         <NavigationMenuList>

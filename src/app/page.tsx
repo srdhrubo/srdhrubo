@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button, ButtonWithLink } from "@/components/ui/button";
 import { FlipWords } from "@/components/ui/flip-words";
 import { DownloadIcon, Pointer } from "lucide-react";
 import Image from "next/image";
@@ -30,12 +30,12 @@ export default function Home() {
           </div>
           <div className="space-y-4">
             <div className="space-x-5">
-              <Button>
+              <ButtonWithLink href="/download/cv">
                 CV <DownloadIcon className="w-4 ml-2" />
-              </Button>
-              <Button>
+              </ButtonWithLink>
+              <ButtonWithLink href="/download/resume">
                 RESUME <DownloadIcon className="w-4 ml-2" />
-              </Button>
+              </ButtonWithLink>
             </div>
             <div>
               <Link href="/contacts">

@@ -25,7 +25,7 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from "@radix-ui/react-tooltip";
-import { Button } from "@/components/ui/button";
+import { Button, ButtonWithLink } from "@/components/ui/button";
 
 const links = {
   academic: [
@@ -118,12 +118,12 @@ export default function NavigationBar() {
                     />
                   ))}
                   <li className="flex gap-4 pl-4">
-                    <Button>
+                    <ButtonWithLink href="/download/cv">
                       CV <DownloadIcon className="w-4 ml-2" />
-                    </Button>
-                    <Button>
+                    </ButtonWithLink>
+                    <ButtonWithLink href="/download/resume">
                       RESUME <DownloadIcon className="w-4 ml-2" />
-                    </Button>
+                    </ButtonWithLink>
                   </li>
                 </div>
                 <div>

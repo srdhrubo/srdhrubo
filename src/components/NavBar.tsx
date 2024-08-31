@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Mail } from "lucide-react";
@@ -49,8 +50,30 @@ const links = {
 };
 
 export default function NavigationBar() {
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <div className="p-global-padding flex items-center justify-between w-full py-4 h-[4.5rem]">
+    <div
+      className={`p-global-padding flex items-center justify-between w-full py-4 h-[4.5rem] bg-white sticky top-0 z-50 transition-transform duration-300 ${
+        lastScrollY === 0
+          ? ""
+          : lastScrollY > 100
+          ? "bg-white shadow-xl w-10/12 mx-auto px-9 top-2 rounded-full border"
+          : "-translate-y-full"
+      }`}
+    >
       <Link href="/" className="z-10">
         <Image src="/logo.png" alt="Logo" width={40} height={40} />
       </Link>

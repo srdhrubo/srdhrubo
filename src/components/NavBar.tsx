@@ -19,14 +19,13 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import logo from "../../public/logo.png";
 import {
   TooltipProvider,
   Tooltip,
   TooltipTrigger,
   TooltipContent,
 } from "@radix-ui/react-tooltip";
-import { Button, ButtonWithLink } from "@/components/ui/button";
+import { ButtonWithLink } from "@/components/ui/button";
 
 const links = {
   academic: [
@@ -34,8 +33,8 @@ const links = {
     { href: "/standardized-test-results", title: "Standardized Test Results" },
   ],
   experience: [
-    { href: "/research", title: "Research" },
-    { href: "/professional", title: "Professional" },
+    { href: "/research_experience", title: "Research" },
+    { href: "/professional_experience", title: "Professional" },
     { href: "/projects", title: "Projects" },
   ],
   affiliation: [

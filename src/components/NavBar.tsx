@@ -65,11 +65,11 @@ export default function NavigationBar() {
 
   return (
     <div
-      className={`p-global-padding flex items-center justify-between w-full py-4 h-[4.5rem] bg-white sticky top-0 z-50 transition-transform duration-300 ${
+      className={`p-global-padding flex items-center justify-between py-4 h-[4.5rem] sticky top-0 z-50 transition-transform duration-300 ${
         lastScrollY === 0
           ? ""
           : lastScrollY > 100
-          ? "bg-white shadow-xl w-10/12 mx-auto px-9 top-2 rounded-full border"
+          ? "bg-white shadow-xl mx-[8.5%] px-[1.5%] top-2 rounded-full border"
           : "-translate-y-full"
       }`}
     >

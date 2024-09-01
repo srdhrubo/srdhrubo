@@ -75,12 +75,18 @@
 
 @media (min-width: 768px) {
   :root {
-    --global-padding: 0rem 2.5rem; /* md screen padding */
+    --global-padding: 0rem 10%; /* md screen padding */
   }
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   :root {
-    --global-padding: 0rem 11rem; /* lg screen padding */
+    --global-padding: 0rem 7.5rem; 
   }
 }
+
+@media (min-width: 1440px) {
+  :root {
+    --global-padding: 0rem 11rem; 
+  }
+} */

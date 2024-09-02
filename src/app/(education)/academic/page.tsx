@@ -57,7 +57,7 @@ const InstitutionCard = ({ info }: { info: AcamdemicInfo }) => {
           fill
           className="object-cover"
         />
-        <div className="absolute w-full h-full bg-gradient-to-t from-white to-transparent from-5% to-50%">
+        <div className="absolute w-full h-full bg-gradient-to-t from-white from-5% to-50%">
           <CardHeader className="absolute bottom-0 flex flex-row items-center gap-4">
             <div className="w-20 h-20 border flex items-center justify-center backdrop-blur bg-white/30 rounded-full shadow-lg">
               <Image

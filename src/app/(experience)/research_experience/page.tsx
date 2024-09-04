@@ -4,7 +4,7 @@ import ResearchExperienceSection from "./research-experience";
 
 export default function ResearchExperiencePage() {
   return (
-    <div className="p-global-padding w-full">
+    <div className="p-global-padding w-full antialiased">
       <header className="max-w-7xl text-center py-10 mx-auto">
         <h1 className="text-4xl font-bold">
           Research Experience and Contributions
@@ -33,15 +33,3 @@ export default function ResearchExperiencePage() {
     </div>
   );
 }
-
-export const SectionHeader = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="flex items-center w-full mb-10 pt-32 px-10">
-      <div className="flex-grow border-t border-gray-300"></div>
-      <span className="mx-4 text-xl font-semibold text-gray-700">
-        {children}
-      </span>
-      <div className="flex-grow border-t border-gray-300"></div>
-    </div>
-  );
-};

@@ -11,7 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Timeline } from "@/components/ui/timeline";
 import dayjs from "dayjs";
 import { ExternalLink } from "lucide-react";
-import { SectionHeader } from "./page";
+import { SectionHeader } from "./research-experience";
 
 export default function PublicationSection() {
   const timelineData = timelineDataOrganizer();

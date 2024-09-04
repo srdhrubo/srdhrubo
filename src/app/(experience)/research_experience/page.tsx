@@ -1,5 +1,6 @@
 import React from "react";
 import PublicationSection from "./publications";
+import ResearchExperienceSection from "./research-experience";
 
 export default function ResearchExperiencePage() {
   return (
@@ -9,7 +10,14 @@ export default function ResearchExperiencePage() {
           Research Experience and Contributions
         </h1>
         <p className="text-gray-600 mt-2 px-10">
-          Discover my research journey, highlighting key contributions and{" "}
+          Discover my{" "}
+          <a
+            href="#research_experience"
+            className="underline underline-offset-4 decoration-yellow-400 decoration-4"
+          >
+            research journey
+          </a>
+          , highlighting key contributions and{" "}
           <a
             href="#publications"
             className="underline underline-offset-4 decoration-yellow-400 decoration-4"
@@ -21,6 +29,7 @@ export default function ResearchExperiencePage() {
         </p>
       </header>
       <PublicationSection />
+      <ResearchExperienceSection />
     </div>
   );
 }

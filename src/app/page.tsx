@@ -15,6 +15,7 @@ import {
 import { MovingBorderButton } from "@/components/ui/moving-border";
 import dayjs from "dayjs";
 import { Separator } from "@/components/ui/separator";
+import { CVDownloadButton, ResumeDownloadButton } from "@/components/buttons";
 
 export default function Home() {
   return (
@@ -30,12 +31,8 @@ export default function Home() {
           </div>
           <div className="space-y-4">
             <div className="space-x-5">
-              <ButtonWithLink href="/download/cv">
-                CV <DownloadIcon className="w-4 ml-2" />
-              </ButtonWithLink>
-              <ButtonWithLink href="/download/resume">
-                RESUME <DownloadIcon className="w-4 ml-2" />
-              </ButtonWithLink>
+              <CVDownloadButton />
+              <ResumeDownloadButton />
             </div>
             <div>
               <Link href="/contacts">

@@ -40,7 +40,7 @@ const socialLinks: SocialLink[] = [
 export default function ContactsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary/10 to-primary/5">
-      <div className="container mx-auto px-4 py-12">
+      <div className="mx-auto p-global-padding py-12">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">
           Get in Touch
         </h1>

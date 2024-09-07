@@ -75,7 +75,20 @@ export default function NavigationBar() {
       }`}
     >
       <Link href="/" className="z-10">
-        <Image src="/logo.png" alt="Logo" width={40} height={40} />
+        <Image
+          src="/logo.png"
+          alt="Logo"
+          width={40}
+          height={40}
+          className="block lg:hidden"
+        />
+        <Image
+          src="/logo_large.png"
+          alt="Logo"
+          width={217}
+          height={40}
+          className="hidden lg:block aspect-auto"
+        />
       </Link>
       <NavigationMenu>
         <NavigationMenuList>

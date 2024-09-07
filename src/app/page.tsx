@@ -16,45 +16,12 @@ import { MovingBorderButton } from "@/components/ui/moving-border";
 import dayjs from "dayjs";
 import { Separator } from "@/components/ui/separator";
 import { CVDownloadButton, ResumeDownloadButton } from "@/components/buttons";
+import HeroSection from "./hero_section";
 
 export default function Home() {
   return (
     <div className="scroll-smooth">
-      <WavyBackground className="p-global-padding h-[calc(100vh-4.5rem)] flex justify-between items-center">
-        <div className="text-4xl font-normal text-neutral-600 dark:text-neutral-400 space-y-4">
-          <div>
-            Hello,
-            <br />
-            Meet Suchinto Roy Dhrubo
-            <br />
-            <FlipWords words={attributes} className="font-semibold" />
-          </div>
-          <div className="space-y-4">
-            <div className="space-x-5">
-              <CVDownloadButton />
-              <ResumeDownloadButton />
-            </div>
-            <div>
-              <Link href="/contacts">
-                <button className="p-[3px] relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-                  <div className="flex gap-2 items-center px-8 py-2 bg-black rounded-[6px] relative group transition duration-200 text-white text-base hover:bg-transparent">
-                    GET IN TOUCH <Pointer className="w-5" />
-                  </div>
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="hidden md:block">
-          <Image
-            src="/hero-image.png"
-            alt="image of shuchinto roy dhrubo"
-            width={400}
-            height={400}
-          />
-        </div>
-      </WavyBackground>
+      <HeroSection />
       <div className="dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2]">
         <section className="p-global-padding py-12">
           <div>

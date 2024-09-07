@@ -13,12 +13,12 @@ import Image from "next/image";
 import { useState } from "react";
 import dayjs from "dayjs";
 
-export default function AcademicPage() {
+export default function EducationPage() {
   return (
     <div className="p-global-padding">
       {/* Header Section */}
       <header className="text-center py-10">
-        <h1 className="text-4xl font-bold">Academic Background</h1>
+        <h1 className="text-4xl font-bold">Education Background</h1>
         <p className="text-gray-600 mt-2">
           Explore my academic journey, and some flashbacks of my student life.
         </p>

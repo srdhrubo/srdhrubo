@@ -83,7 +83,12 @@ const InstitutionCard = ({ info }: { info: AcamdemicInfo }) => {
             <p className="font-semibold" key={degree.obtainedDegree}>
               {degree.obtainedDegree} | {degree.gradeName}:{" "}
               {degree.gradeObtained.toFixed(2)} (out of{" "}
-              {degree.maxGrade.toFixed(2)})
+              {degree.maxGrade.toFixed(2)}) <br />
+              {degree.position &&
+                degree.totalPupil &&
+                `Postion: ${degree.position}/${degree.totalPupil}`}
+              {degree.marksPercentage &&
+                ` | Marks: ${degree.marksPercentage.toFixed(2)}%`}
             </p>
           ))}
         <p>
@@ -127,6 +132,9 @@ type AcamdemicInfo = {
     gradeObtained: number;
     maxGrade: number;
     gradeName: string;
+    position?: number;
+    totalPupil?: number;
+    marksPercentage?: number;
   }[];
   reminisce: string;
   cover: string;
@@ -149,6 +157,9 @@ const academicInfo: AcamdemicInfo[] = [
         gradeObtained: 3.36,
         maxGrade: 4,
         gradeName: "CGPA",
+        position: 41,
+        totalPupil: 140,
+        marksPercentage: 71.2,
       },
     ],
     reminisce: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim officia consectetur numquam! Dolor quisquam dolorum totam, accusantium animi voluptates illo reprehenderit impedit aspernatur veritatis soluta tempora labore. Dicta, porro pariatur.

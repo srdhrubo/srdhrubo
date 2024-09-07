@@ -25,13 +25,12 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from "@radix-ui/react-tooltip";
-import { ButtonWithLink } from "@/components/ui/button";
 import { CVDownloadButton, ResumeDownloadButton } from "./buttons";
 
-const links = {
+export const links = {
   academic: [
-    { href: "/academic", title: "Academic" },
-    { href: "/standardized-test-results", title: "Standardized Test Results" },
+    { href: "/education", title: "Education" },
+    { href: "/publications", title: "Publications" },
   ],
   experience: [
     { href: "/research_experience", title: "Research" },
@@ -93,7 +92,7 @@ export default function NavigationBar() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Education</NavigationMenuTrigger>
+            <NavigationMenuTrigger>Academic</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-6 w-[450px]">
                 {links.academic.map((link) => (

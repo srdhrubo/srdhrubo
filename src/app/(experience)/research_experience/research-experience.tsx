@@ -12,7 +12,6 @@ import { CalendarIcon, UserIcon, UsersIcon, BookOpenIcon } from "lucide-react";
 export default function ResearchExperienceSection() {
   return (
     <div className="container mx-auto p-4" id="research_experience">
-      <SectionHeader>Research Experience</SectionHeader>
       <div>
         {researchExperiences.map((experience, index) => (
           <ResearchExperienceCard key={index} experience={experience} />
@@ -85,18 +84,6 @@ function ResearchExperienceCard({
     </Card>
   );
 }
-
-export const SectionHeader = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="flex items-center w-full mb-10 pt-32 px-10">
-      <div className="flex-grow border-t border-gray-300"></div>
-      <span className="mx-4 text-xl font-semibold text-gray-700">
-        {children}
-      </span>
-      <div className="flex-grow border-t border-gray-300"></div>
-    </div>
-  );
-};
 
 interface ResearchExperience {
   title: string;

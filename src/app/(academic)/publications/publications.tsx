@@ -11,7 +11,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Timeline } from "@/components/ui/timeline";
 import dayjs from "dayjs";
 import { ExternalLink } from "lucide-react";
-import { SectionHeader } from "./research-experience";
 
 export default function PublicationSection() {
   const timelineData = timelineDataOrganizer();
@@ -20,7 +19,6 @@ export default function PublicationSection() {
   );
   return (
     <section id="publications">
-      <SectionHeader>Publications</SectionHeader>
       <div>
         <Tabs defaultValue="published">
           <div className="w-full text-center">

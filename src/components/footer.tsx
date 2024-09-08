@@ -5,11 +5,11 @@ import { MdWhatsapp } from "react-icons/md";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { navLinks, moreLinks, PageLink, NavItem } from "./NavBar";
-import { link } from "fs";
+import { Meteors } from "./ui/meteors";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12 w-full">
+    <footer className="bg-gray-900 text-gray-300 py-12 w-full relative overflow-hidden">
       <div className="mx-auto p-global-padding grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
         {navLinks.map((link) => (
           <LinkTab key={link.title} navItem={link} />
@@ -68,6 +68,7 @@ export default function Footer() {
           </Link>
         </p>
       </div>
+      <Meteors number={50} />
     </footer>
   );
 }

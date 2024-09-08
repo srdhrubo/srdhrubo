@@ -27,26 +27,48 @@ import {
 } from "@radix-ui/react-tooltip";
 import { CVDownloadButton, ResumeDownloadButton } from "./buttons";
 
-export const links = {
-  academic: [
-    { href: "/education", title: "Education" },
-    { href: "/publications", title: "Publications" },
-  ],
-  experience: [
-    { href: "/research_experience", title: "Research" },
-    { href: "/professional_experience", title: "Professional" },
-    { href: "/projects", title: "Projects" },
-  ],
-  affiliation: [
-    { href: "/achievements", title: "Achievements" },
-    { href: "/co-curriculars", title: "Co-curricular Activities" },
-  ],
-  more: [
-    { href: "/contacts", title: "Contact Details" },
-    { href: "/about", title: "About Me" },
-    { href: "/references", title: "References" },
-  ],
+export type PageLink = {
+  href: string;
+  title: string;
 };
+
+export interface NavItem {
+  title: string;
+  href?: string;
+  pages?: PageLink[];
+}
+
+export const navLinks: NavItem[] = [
+  {
+    title: "Academic",
+    pages: [
+      { href: "/education", title: "Education" },
+      { href: "/publications", title: "Publications" },
+    ],
+  },
+  {
+    title: "Experience",
+    pages: [
+      { href: "/research_experience", title: "Research" },
+      { href: "/professional_experience", title: "Professional" },
+      { href: "/projects", title: "Projects" },
+    ],
+  },
+  {
+    title: "Affiliation",
+    pages: [
+      { href: "/achievements", title: "Achievements" },
+      { href: "/co-curriculars", title: "Co-curricular Activities" },
+    ],
+  },
+  { title: "Skills", href: "/skills" },
+];
+
+export const moreLinks: PageLink[] = [
+  { href: "/contacts", title: "Contact Details" },
+  { href: "/about", title: "About Me" },
+  { href: "/references", title: "References" },
+];
 
 export default function NavigationBar() {
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -91,61 +113,15 @@ export default function NavigationBar() {
       </Link>
       <NavigationMenu>
         <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Academic</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-6 w-[450px]">
-                {links.academic.map((link) => (
-                  <ListItem
-                    href={link.href}
-                    title={link.title}
-                    key={link.href}
-                  />
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Experience</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-6 w-[450px]">
-                {links.experience.map((link) => (
-                  <ListItem
-                    href={link.href}
-                    title={link.title}
-                    key={link.href}
-                  />
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Affiliation</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-6 w-[450px]">
-                {links.affiliation.map((link) => (
-                  <ListItem
-                    href={link.href}
-                    title={link.title}
-                    key={link.href}
-                  />
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/skills" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Skills
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
+          {navLinks.map((navItem) => (
+            <NavItemComponent key={navItem.title} navItem={navItem} />
+          ))}
           <NavigationMenuItem>
             <NavigationMenuTrigger>More</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="flex justify-between p-6 w-[450px]">
                 <div className="grid gap-3">
-                  {links.more.map((link) => (
+                  {moreLinks.map((link) => (
                     <ListItem
                       href={link.href}
                       title={link.title}
@@ -188,6 +164,33 @@ export default function NavigationBar() {
     </div>
   );
 }
+
+const NavItemComponent = ({ navItem }: { navItem: NavItem }) => {
+  const { title, href, pages } = navItem;
+  return (
+    <NavigationMenuItem>
+      {href && (
+        <Link href={href} legacyBehavior passHref>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            {title}
+          </NavigationMenuLink>
+        </Link>
+      )}
+      {pages && (
+        <>
+          <NavigationMenuTrigger>{title}</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-6 w-[450px]">
+              {pages.map((link) => (
+                <ListItem href={link.href} title={link.title} key={link.href} />
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </>
+      )}
+    </NavigationMenuItem>
+  );
+};
 
 const ToolTipComponent = ({
   children,

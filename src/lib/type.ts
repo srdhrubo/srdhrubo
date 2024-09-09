@@ -19,3 +19,26 @@ export interface Paper {
   doi?: string;
   link?: string;
 }
+
+export interface AcamdemicInfo {
+  institution: string;
+  location: {
+    city: string;
+    postalCode: string;
+    country: string;
+  };
+  started: string;
+  completed: string;
+  degree?: {
+    obtainedDegree: string;
+    gradeObtained: number;
+    maxGrade: number;
+    gradeName: string;
+    position?: number;
+    totalPupil?: number;
+    marksPercentage?: number;
+  }[];
+  reminisce: string;
+  cover: string;
+  logo: string;
+}

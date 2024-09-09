@@ -12,6 +12,8 @@ import { TracingBeam } from "@/components/ui/tracing-beam";
 import Image from "next/image";
 import { useState } from "react";
 import dayjs from "dayjs";
+import { academicInfo } from "@/lib/data";
+import { AcamdemicInfo } from "@/lib/type";
 
 export default function EducationPage() {
   return (
@@ -117,98 +119,3 @@ const InstitutionCard = ({ info }: { info: AcamdemicInfo }) => {
     </Card>
   );
 };
-
-type AcamdemicInfo = {
-  institution: string;
-  location: {
-    city: string;
-    postalCode: string;
-    country: string;
-  };
-  started: string;
-  completed: string;
-  degree?: {
-    obtainedDegree: string;
-    gradeObtained: number;
-    maxGrade: number;
-    gradeName: string;
-    position?: number;
-    totalPupil?: number;
-    marksPercentage?: number;
-  }[];
-  reminisce: string;
-  cover: string;
-  logo: string;
-};
-
-const academicInfo: AcamdemicInfo[] = [
-  {
-    institution: "Khulna University of Engineering & Technology (KUET)",
-    location: {
-      city: "Khulna",
-      postalCode: "9203",
-      country: "Bangladesh",
-    },
-    started: "2018-01-25",
-    completed: "2023-04-05",
-    degree: [
-      {
-        obtainedDegree: "Bachelor of Science in Mechanical Engineering",
-        gradeObtained: 3.36,
-        maxGrade: 4,
-        gradeName: "CGPA",
-        position: 41,
-        totalPupil: 140,
-        marksPercentage: 71.2,
-      },
-    ],
-    reminisce: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim officia consectetur numquam! Dolor quisquam dolorum totam, accusantium animi voluptates illo reprehenderit impedit aspernatur veritatis soluta tempora labore. Dicta, porro pariatur.
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, libero eos illo est sunt dicta? Rerum tempora, repellendus deleniti, omnis molestias doloribus quae ipsa labore non totam recusandae, exercitationem ipsum!`,
-    cover: "/kuet.jpg",
-    logo: "/kuet_logo.png",
-  },
-  {
-    institution: "Saint Joseph Higher Secondary School",
-    location: {
-      city: "Dhaka",
-      postalCode: "1207",
-      country: "Bangladesh",
-    },
-    started: "2015-07-01",
-    completed: "2017-06-30",
-    degree: [
-      {
-        obtainedDegree: "Higher Secondary Certificate (HSC)",
-        gradeObtained: 5,
-        maxGrade: 5,
-        gradeName: "GPA",
-      },
-    ],
-    reminisce: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim officia consectetur numquam! Dolor quisquam dolorum totam, accusantium animi voluptates illo reprehenderit impedit aspernatur veritatis soluta tempora labore. Dicta, porro pariatur.
-Lorem, ipsum dolor sit amet consectetur adipisicing elit.`,
-    cover: "/St._Joseph_Higher_Secondary_School.jpg",
-    logo: "/St._Joseph_Higher_Secondary_School_logo.png",
-  },
-  {
-    institution: "Hasan Ali Government High School",
-    location: {
-      city: "Chandpur",
-      postalCode: "3600",
-      country: "Bangladesh",
-    },
-    started: "2003-01-01",
-    completed: "2015-06-30",
-    degree: [
-      {
-        obtainedDegree: "Secondary School Certificate (SSC)",
-        gradeObtained: 5,
-        maxGrade: 5,
-        gradeName: "GPA",
-      },
-    ],
-    reminisce: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim officia consectetur numquam! Dolor quisquam dolorum totam, accusantium animi voluptates illo reprehenderit impedit aspernatur veritatis soluta tempora labore. Dicta, porro pariatur.
-Lorem, ipsum dolor sit amet consectetur adipisicing elit.`,
-    cover: "/hasan_ali_govt.jpeg",
-    logo: "/hasan_ali_govt_logo.png",
-  },
-];

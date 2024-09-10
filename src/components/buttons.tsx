@@ -1,5 +1,20 @@
 import { DownloadIcon } from "lucide-react";
-import { ButtonWithLink } from "./ui/button";
+import { Button } from "./ui/button";
+import Link from "next/link";
+
+export const ButtonWithLink = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <Button asChild>
+      <Link href={href}>{children}</Link>
+    </Button>
+  );
+};
 
 export const CVDownloadButton = () => {
   return (

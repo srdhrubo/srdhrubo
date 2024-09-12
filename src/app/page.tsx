@@ -4,12 +4,23 @@ import HeroSection from "./hero_section";
 import { paperInformation } from "@/lib/data";
 import React from "react";
 import PaperCard from "@/components/landing-page-paper-card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { LinkIcon } from "lucide-react";
+import { ButtonWithLink } from "@/components/buttons";
 
 export default function Home() {
   return (
     <div className="scroll-smooth space-y-8 mb-16">
       <HeroSection />
       <PaperSection />
+      <ProjectSection />
     </div>
   );
 }
@@ -38,6 +49,71 @@ const PaperSection = () => {
             KNOW ALL ABOUT MY PUBLICATIONS
           </MovingBorderButton>
         </Link>
+      </div>
+    </section>
+  );
+};
+
+const ProjectSection = () => {
+  return (
+    <section className="p-global-padding space-y-10">
+      <div>
+        <Card className="space-y-10 lg:grid lg:grid-cols-4">
+          <div className="lg:col-span-3 relative">
+            <Link href="https://www.prothomalo.com/amp/story/lifestyle/%E0%A6%AC%E0%A6%BE%E0%A6%87%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A7%81%E0%A6%A8%E0%A6%B8%E0%A6%BE%E0%A6%A8-%E0%A6%AD%E0%A7%87%E0%A6%A4%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A6%B0%E0%A6%AC-%E0%A6%95%E0%A7%81%E0%A7%9F%E0%A7%87%E0%A6%9F">
+              <img
+                src="/prothom-alo-feature.jpg"
+                alt="feature"
+                className="w-full object-cover"
+              />
+            </Link>
+            <div className="absolute top-4 right-6">
+              <LinkIcon />
+            </div>
+          </div>
+          <div>
+            <CardHeader>
+              <CardTitle>Our Project Featured in a National Daily</CardTitle>
+              <CardDescription>Published: 20 Jun 2022</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <CardTitle className="mb-4">KUET DURBAR</CardTitle>
+              <p>
+                A rover designed, fabricated and implemented by a bunch of
+                undergraduate students of Khulna University of Engineering &
+                Technology for the <b>Mars Rover Challenge</b>. Almost 30+
+                students from various departments and majors are divided into 5
+                sub teams to maintain the team for upcoming mars rover
+                competition all around the world. I was involved as a mechanical
+                team member at the initial stages and helped the team with
+                design and fabricating parts of the rover body.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <ButtonWithLink href="/projects">
+                LEARN MORE ABOUT MY PROJECTS
+              </ButtonWithLink>
+            </CardFooter>
+          </div>
+        </Card>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-fit mx-auto">
+        <iframe
+          src="https://www.youtube.com/embed/DxiYWCe7TLI?si=7n4Dnf4lIwZB-xKv"
+          title="Durbar Video 01"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          className="rounded-md lg:w-[560px] lg:h-[315px]"
+        ></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/ML1VA-ceKm8?si=NfBBMRmDlK1_luSp"
+          title="Durbar Video 02"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          className="rounded-md lg:w-[560px] lg:h-[315px]"
+        ></iframe>
       </div>
     </section>
   );

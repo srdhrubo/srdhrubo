@@ -18,6 +18,7 @@ export interface Paper {
   venue?: string;
   doi?: string;
   link?: string;
+  images?: string[];
 }
 
 export interface AcamdemicInfo {

@@ -16,6 +16,11 @@ export const paperInformation: Paper[] = [
     ],
     type: "Conference Proceedings",
     status: "Published",
+    images: [
+      "/Publication/Published/Comaparative/1.jpg",
+      "/Publication/Published/Comaparative/2.jpg",
+      "/Publication/Published/Comaparative/3.png",
+    ],
   },
   {
     publicationDate: "2022-02-26",
@@ -35,6 +40,10 @@ export const paperInformation: Paper[] = [
     ],
     type: "Conference Proceedings",
     status: "Published",
+    images: [
+      "/Publication/Published/Wearable/1.png",
+      "/Publication/Published/Wearable/2.png",
+    ],
   },
   {
     id: 3,
@@ -52,6 +61,10 @@ export const paperInformation: Paper[] = [
     ],
     type: "Conference Proceedings",
     status: "Published",
+    images: [
+      "/Publication/Published/Transforming UAV/1.jpg",
+      "/Publication/Published/Transforming UAV/2.jpg",
+    ],
   },
   {
     id: 4,
@@ -65,6 +78,11 @@ export const paperInformation: Paper[] = [
     ],
     type: "Journal Article",
     status: "Under Review",
+    images: [
+      "/Publication/Published/Comaparative/1.jpg",
+      "/Publication/Published/Comaparative/2.jpg",
+      "/Publication/Published/Comaparative/3.png",
+    ],
   },
   {
     id: 5,
@@ -78,6 +96,11 @@ export const paperInformation: Paper[] = [
     ],
     type: "Journal Article",
     status: "In Preparation",
+    images: [
+      "/Publication/Published/Comaparative/1.jpg",
+      "/Publication/Published/Comaparative/2.jpg",
+      "/Publication/Published/Comaparative/3.png",
+    ],
   },
 ];
 

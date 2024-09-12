@@ -1,4 +1,4 @@
-import { ButtonWithLink } from "@/components/ui/button";
+import { ButtonWithLink } from "@/components/buttons";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { BinocularsIcon, HomeIcon } from "lucide-react";
 

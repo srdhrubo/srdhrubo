@@ -186,7 +186,14 @@ export const researchExperiences: ResearchExperience[] = [
     startDate: "August 2023",
     endDate: "Present",
     type: "research",
-    images: ["/placeholder.svg?height=400&width=800"],
+    images: [
+      "/research_experience/additive_manufacturing/1.jpg",
+      "/research_experience/additive_manufacturing/2.jpg",
+      "/research_experience/additive_manufacturing/3.jpg",
+      "/research_experience/additive_manufacturing/4.jpg",
+      "/research_experience/additive_manufacturing/5.jpg",
+      "/research_experience/additive_manufacturing/6.jpg",
+    ],
   },
   {
     title: "Mars Rover",
@@ -198,9 +205,14 @@ export const researchExperiences: ResearchExperience[] = [
     endDate: "April 2023",
     type: "project",
     images: [
-      "/placeholder.svg?height=400&width=800",
-      "/placeholder.svg?height=400&width=800",
-      "/placeholder.svg?height=400&width=800",
+      "/research_experience/mars_rover/1.JPG",
+      "/research_experience/mars_rover/2.JPG",
+      "/research_experience/mars_rover/3.JPG",
+      "/research_experience/mars_rover/4.JPG",
+      "/research_experience/mars_rover/5.JPG",
+      "/research_experience/mars_rover/6.JPG",
+      "/research_experience/mars_rover/7.JPG",
+      "/research_experience/mars_rover/8.JPG",
     ],
   },
   {
@@ -213,7 +225,10 @@ export const researchExperiences: ResearchExperience[] = [
     type: "thesis",
     thesisTitle:
       "A Numerical Study of Aerodynamic Performance of Corrugated Airfoil of a Dragonfly Wing Section",
-    images: ["/placeholder.svg?height=400&width=800"],
+    images: [
+      "/research_experience/undergrad_thesis/1.png",
+      "/research_experience/undergrad_thesis/2.gif",
+    ],
   },
   {
     title: "Undergraduate Project",
@@ -226,8 +241,9 @@ export const researchExperiences: ResearchExperience[] = [
     projectTitle:
       "Construction & Performance Test of Electromagnetic Braking System",
     images: [
-      "/placeholder.svg?height=400&width=800",
-      "/placeholder.svg?height=400&width=800",
+      "/research_experience/undergrad_project/1.jpg",
+      "/research_experience/undergrad_project/2.jpg",
+      "/research_experience/undergrad_project/3.jpg",
     ],
   },
 ];

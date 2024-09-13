@@ -9,7 +9,7 @@ export default function ResearchExperiencePage() {
           Research Experience and Contributions
         </h1>
         <p className="text-gray-600 mt-2 px-10">
-          Discover my research journey , highlighting key contributions that
+          Discover my research journey, highlighting key contributions that
           reflect my commitment to advancing knowledge and solutions in the
           field.
         </p>

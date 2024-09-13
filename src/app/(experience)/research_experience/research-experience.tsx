@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -6,8 +9,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Autoplay from "embla-carousel-autoplay";
 import { Badge } from "@/components/ui/badge";
 import { CalendarIcon, UserIcon, UsersIcon, BookOpenIcon } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { ResearchExperience } from "@/lib/type";
+import { researchExperiences } from "@/lib/data";
 
 export default function ResearchExperienceSection() {
   return (
@@ -26,6 +39,9 @@ function ResearchExperienceCard({
 }: {
   experience: ResearchExperience;
 }) {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
   return (
     <Card className="mb-6">
       <CardHeader>
@@ -43,6 +59,43 @@ function ResearchExperienceCard({
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {experience.images && experience.images.length > 0 && (
+            <div className="col-span-full mb-4">
+              {experience.images.length === 1 ? (
+                <Image
+                  src={experience.images[0]}
+                  alt={`Image for ${experience.title}`}
+                  width={800}
+                  height={400}
+                  className="w-full h-auto rounded-lg"
+                />
+              ) : (
+                <Carousel
+                  className="w-full max-w-2xl mx-auto"
+                  opts={{ loop: true, align: "center" }}
+                  plugins={[plugin.current]}
+                  onMouseEnter={plugin.current.stop}
+                  onMouseLeave={plugin.current.reset}
+                >
+                  <CarouselContent>
+                    {experience.images.map((image, index) => (
+                      <CarouselItem key={index}>
+                        <Image
+                          src={image}
+                          alt={`Image ${index + 1} for ${experience.title}`}
+                          width={800}
+                          height={400}
+                          className="w-full h-auto rounded-lg"
+                        />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="max-sm:left-1 max-sm:opacity-60 max-sm:border max-sm:border-black" />
+                  <CarouselNext className="max-sm:right-1 max-sm:opacity-60 max-sm:border max-sm:border-black" />
+                </Carousel>
+              )}
+            </div>
+          )}
           <div className="flex items-center">
             <UserIcon className="mr-2 h-4 w-4" />
             <p className="text-sm">
@@ -84,60 +137,3 @@ function ResearchExperienceCard({
     </Card>
   );
 }
-
-interface ResearchExperience {
-  title: string;
-  institution: string;
-  group?: string;
-  supervisor: string;
-  startDate: string;
-  endDate: string;
-  type: "research" | "project" | "thesis";
-  thesisTitle?: string;
-  projectTitle?: string;
-}
-
-const researchExperiences: ResearchExperience[] = [
-  {
-    title: "Additive Manufacturing and Comparison of Mechanical Behaviour",
-    institution:
-      "Khulna University of Engineering & Technology (KUET), Khulna-9203",
-    group: "Independent Research Group",
-    supervisor: "Dr. Md. Shariful Islam",
-    startDate: "August 2023",
-    endDate: "Present",
-    type: "research",
-  },
-  {
-    title: "Mars Rover",
-    institution:
-      "Khulna University of Engineering & Technology (KUET), Khulna-9203",
-    group: "KUET Mars Rover (Team Durbar)",
-    supervisor: "Dr. Md. Helal-An-Nahiyan",
-    startDate: "January 2019",
-    endDate: "April 2023",
-    type: "project",
-  },
-  {
-    title: "Undergraduate Thesis",
-    institution:
-      "Khulna University of Engineering & Technology (KUET), Khulna-9203",
-    supervisor: "Dr. Md. Ashraful Islam",
-    startDate: "March 2022",
-    endDate: "March 2023",
-    type: "thesis",
-    thesisTitle:
-      "A Numerical Study of Aerodynamic Performance of Corrugated Airfoil of a Dragonfly Wing Section",
-  },
-  {
-    title: "Undergraduate Project",
-    institution:
-      "Khulna University of Engineering & Technology (KUET), Khulna-9203",
-    supervisor: "Dr. Md. Shariful Islam",
-    startDate: "February 2020",
-    endDate: "March 2022",
-    type: "project",
-    projectTitle:
-      "Construction & Performance Test of Electromagnetic Braking System",
-  },
-];

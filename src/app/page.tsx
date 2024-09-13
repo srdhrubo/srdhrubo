@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/card";
 import { LinkIcon } from "lucide-react";
 import { ButtonWithLink } from "@/components/buttons";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -61,9 +62,10 @@ const ProjectSection = () => {
         <Card className="space-y-10 lg:grid lg:grid-cols-4">
           <div className="lg:col-span-3 relative">
             <Link href="https://www.prothomalo.com/amp/story/lifestyle/%E0%A6%AC%E0%A6%BE%E0%A6%87%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A7%81%E0%A6%A8%E0%A6%B8%E0%A6%BE%E0%A6%A8-%E0%A6%AD%E0%A7%87%E0%A6%A4%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A6%B0%E0%A6%AC-%E0%A6%95%E0%A7%81%E0%A7%9F%E0%A7%87%E0%A6%9F">
-              <img
+              <Image
                 src="/prothom-alo-feature.jpg"
                 alt="feature"
+                fill
                 className="w-full object-cover"
               />
             </Link>

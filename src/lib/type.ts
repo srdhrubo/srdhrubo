@@ -43,3 +43,16 @@ export interface AcamdemicInfo {
   cover: string;
   logo: string;
 }
+
+export interface ResearchExperience {
+  title: string;
+  institution: string;
+  group?: string;
+  supervisor: string;
+  startDate: string;
+  endDate: string;
+  type: "research" | "project" | "thesis";
+  thesisTitle?: string;
+  projectTitle?: string;
+  images?: string[];
+}

@@ -1,4 +1,4 @@
-import { AcamdemicInfo, Paper } from "./type";
+import { AcamdemicInfo, Paper, ResearchExperience } from "./type";
 
 export const paperInformation: Paper[] = [
   {
@@ -173,5 +173,61 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit.`,
 Lorem, ipsum dolor sit amet consectetur adipisicing elit.`,
     cover: "/hasan_ali_govt.jpeg",
     logo: "/hasan_ali_govt_logo.png",
+  },
+];
+
+export const researchExperiences: ResearchExperience[] = [
+  {
+    title: "Additive Manufacturing and Comparison of Mechanical Behaviour",
+    institution:
+      "Khulna University of Engineering & Technology (KUET), Khulna-9203",
+    group: "Independent Research Group",
+    supervisor: "Dr. Md. Shariful Islam",
+    startDate: "August 2023",
+    endDate: "Present",
+    type: "research",
+    images: ["/placeholder.svg?height=400&width=800"],
+  },
+  {
+    title: "Mars Rover",
+    institution:
+      "Khulna University of Engineering & Technology (KUET), Khulna-9203",
+    group: "KUET Mars Rover (Team Durbar)",
+    supervisor: "Dr. Md. Helal-An-Nahiyan",
+    startDate: "January 2019",
+    endDate: "April 2023",
+    type: "project",
+    images: [
+      "/placeholder.svg?height=400&width=800",
+      "/placeholder.svg?height=400&width=800",
+      "/placeholder.svg?height=400&width=800",
+    ],
+  },
+  {
+    title: "Undergraduate Thesis",
+    institution:
+      "Khulna University of Engineering & Technology (KUET), Khulna-9203",
+    supervisor: "Dr. Md. Ashraful Islam",
+    startDate: "March 2022",
+    endDate: "March 2023",
+    type: "thesis",
+    thesisTitle:
+      "A Numerical Study of Aerodynamic Performance of Corrugated Airfoil of a Dragonfly Wing Section",
+    images: ["/placeholder.svg?height=400&width=800"],
+  },
+  {
+    title: "Undergraduate Project",
+    institution:
+      "Khulna University of Engineering & Technology (KUET), Khulna-9203",
+    supervisor: "Dr. Md. Shariful Islam",
+    startDate: "February 2020",
+    endDate: "March 2022",
+    type: "project",
+    projectTitle:
+      "Construction & Performance Test of Electromagnetic Braking System",
+    images: [
+      "/placeholder.svg?height=400&width=800",
+      "/placeholder.svg?height=400&width=800",
+    ],
   },
 ];

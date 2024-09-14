@@ -283,3 +283,9 @@ export const experiences: ProfessionalExperience[] = [
     ],
   },
 ];
+
+export const iframeVideos = [
+  "https://www.youtube.com/embed/DxiYWCe7TLI?si=YT8crkoHQ3SxbKyZ",
+  "https://www.youtube.com/embed/ML1VA-ceKm8?si=Rl9j48nhUpzdBQ7H",
+  "https://www.youtube.com/embed/MtGT4qaSBn8?si=RHzaR016wVNLX56K",
+];

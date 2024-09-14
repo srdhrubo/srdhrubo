@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MovingBorderButton } from "@/components/ui/moving-border";
 import HeroSection from "./hero_section";
-import { paperInformation } from "@/lib/data";
+import { iframeVideos, paperInformation } from "@/lib/data";
 import React from "react";
 import PaperCard from "@/components/landing-page-paper-card";
 import {
@@ -102,24 +102,24 @@ const ProjectSection = () => {
           </div>
         </Card>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-fit mx-auto">
-        <iframe
-          src="https://www.youtube.com/embed/DxiYWCe7TLI?si=7n4Dnf4lIwZB-xKv"
-          title="Durbar Video 01"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-          className="rounded-md lg:w-[560px] lg:h-[315px]"
-        ></iframe>
-        <iframe
-          src="https://www.youtube.com/embed/ML1VA-ceKm8?si=NfBBMRmDlK1_luSp"
-          title="Durbar Video 02"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-          className="rounded-md lg:w-[560px] lg:h-[315px]"
-        ></iframe>
+      <div className="flex flex-col gap-16 lg:flex-row lg:flex-wrap justify-center">
+        {iframeVideos.map((link, idx) => (
+          <IFrame key={idx} link={link} idx={idx} />
+        ))}
       </div>
     </section>
+  );
+};
+
+const IFrame = ({ link, idx }: { link: string; idx: number }) => {
+  return (
+    <iframe
+      src={link}
+      title={`Durbar Video 0${idx + 1}`}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
+      className="rounded-md w-full lg:w-[45%] aspect-video flex-shrink-0"
+    ></iframe>
   );
 };

@@ -38,7 +38,7 @@ const PaperSection = () => {
             My Latest Publications
           </h1>
         </div>
-        <div className="my-14 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-24">
+        <div className="my-14 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-fit mx-auto">
           {recentlyPublishedPapers.map((paper) => (
             <PaperCard key={paper.title} paper={paper} />
           ))}
@@ -59,9 +59,12 @@ const ProjectSection = () => {
   return (
     <section className="p-global-padding space-y-10">
       <div>
-        <Card className="space-y-10 lg:grid lg:grid-cols-4">
-          <div className="lg:col-span-3 relative">
-            <Link href="https://www.prothomalo.com/amp/story/lifestyle/%E0%A6%AC%E0%A6%BE%E0%A6%87%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A7%81%E0%A6%A8%E0%A6%B8%E0%A6%BE%E0%A6%A8-%E0%A6%AD%E0%A7%87%E0%A6%A4%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A6%B0%E0%A6%AC-%E0%A6%95%E0%A7%81%E0%A7%9F%E0%A7%87%E0%A6%9F">
+        <Card className="grid grid-cols-1 lg:grid-cols-5">
+          <div className="col-span-1 lg:col-span-3 max-lg:h-52 relative">
+            <Link
+              target="_blank"
+              href="https://www.prothomalo.com/amp/story/lifestyle/%E0%A6%AC%E0%A6%BE%E0%A6%87%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A7%81%E0%A6%A8%E0%A6%B8%E0%A6%BE%E0%A6%A8-%E0%A6%AD%E0%A7%87%E0%A6%A4%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A6%B0%E0%A6%AC-%E0%A6%95%E0%A7%81%E0%A7%9F%E0%A7%87%E0%A6%9F"
+            >
               <Image
                 src="/prothom-alo-feature.jpg"
                 alt="feature"
@@ -69,11 +72,11 @@ const ProjectSection = () => {
                 className="w-full object-cover"
               />
             </Link>
-            <div className="absolute top-4 right-6">
+            <div className="absolute top-4 right-6 opacity-50">
               <LinkIcon />
             </div>
           </div>
-          <div>
+          <div className="lg:col-span-2">
             <CardHeader>
               <CardTitle>Our Project Featured in a National Daily</CardTitle>
               <CardDescription>Published: 20 Jun 2022</CardDescription>
@@ -91,9 +94,9 @@ const ProjectSection = () => {
                 design and fabricating parts of the rover body.
               </p>
             </CardContent>
-            <CardFooter>
+            <CardFooter className="w-fit mx-auto">
               <ButtonWithLink href="/projects">
-                LEARN MORE ABOUT MY PROJECTS
+                MORE ABOUT MY PROJECTS
               </ButtonWithLink>
             </CardFooter>
           </div>

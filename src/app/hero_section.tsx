@@ -76,7 +76,7 @@ export default function HeroSection() {
     </div>
   );
   return (
-    <div className="h-[200vh] mb-60" ref={ref}>
+    <div className="h-[150vh] mb-60" ref={ref}>
       <GoogleGeminiEffect
         pathLengths={[
           pathLengthFirst,

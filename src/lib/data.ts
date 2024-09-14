@@ -1,4 +1,9 @@
-import { AcamdemicInfo, Paper, ResearchExperience } from "./type";
+import {
+  AcamdemicInfo,
+  Paper,
+  ProfessionalExperience,
+  ResearchExperience,
+} from "./type";
 
 export const paperInformation: Paper[] = [
   {
@@ -260,6 +265,21 @@ export const researchExperiences: ResearchExperience[] = [
     description: [
       "Explored the potential of an Electromagnetic Braking System, using electromagnetism to stop vehicles, highlighting its advantages and current limitations.",
       "Emphasized the need for further research to overcome challenges and align with the shift toward electric-powered vehicles in the automobile industry.",
+    ],
+  },
+];
+
+export const experiences: ProfessionalExperience[] = [
+  {
+    company: "Synovia Pharma PLC.",
+    formerName: "Sanofi Bangladesh Limited",
+    designation: "Executive",
+    startDate: "December 2023",
+    responsibilities: [
+      "Supervised the Fire Hydrant Pipeline Installation Project and managed ETP and STP operations.",
+      "Ensured compliance with GMP and +QDCI regulatory standards.",
+      "Implemented HSE protocols per BNBC Fire and Electrical Codes, PPE Matrix, DoE Laws-Acts, and DPHE Guidelines.",
+      "Created Site Plan, Zone Layout, Machine Layout, and Man-Material-Waste Flow diagrams using AutoCAD.",
     ],
   },
 ];

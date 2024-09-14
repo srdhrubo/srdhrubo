@@ -57,3 +57,12 @@ export interface ResearchExperience {
   images?: string[];
   description?: string[];
 }
+
+export interface ProfessionalExperience {
+  company: string;
+  formerName?: string;
+  designation: string;
+  startDate: string;
+  endDate?: string;
+  responsibilities: string[];
+}

@@ -194,6 +194,10 @@ export const researchExperiences: ResearchExperience[] = [
       "/research_experience/additive_manufacturing/5.jpg",
       "/research_experience/additive_manufacturing/6.jpg",
     ],
+    description: [
+      "Investigated the impact of different process parameters and materials on mechanical properties of 3D-printed components using Fused Deposition Modelling (FDM) & Stereolithography (SLA).",
+      "Examined the effect of process parameters and materials (PLA, ABS, PLA-CF, PETG, PAHT-CF) on 3D-printed components using tensile, compressive, and bending tests.",
+    ],
   },
   {
     title: "Mars Rover",
@@ -214,6 +218,10 @@ export const researchExperiences: ResearchExperience[] = [
       "/research_experience/mars_rover/7.JPG",
       "/research_experience/mars_rover/8.JPG",
     ],
+    description: [
+      "Researched, designed, and developed a Mars rover using the rocker-bogie mechanism, including a manipulator arm capable of lifting over 5 kg.",
+      "Led the team, coordinated with sub-teams, and participated in international rover challenges.",
+    ],
   },
   {
     title: "Undergraduate Thesis",
@@ -228,6 +236,10 @@ export const researchExperiences: ResearchExperience[] = [
     images: [
       "/research_experience/undergrad_thesis/1.png",
       "/research_experience/undergrad_thesis/2.gif",
+    ],
+    description: [
+      "Conducted a numerical study on the aerodynamic performance of dragonfly-inspired corrugated airfoils, using a wide range of flapping frequencies, to evaluate lift and drag.",
+      "Results show superior lift-to-drag ratios compared to conventional airfoils, and higher lift-to-drag ratios in higher frequencies.",
     ],
   },
   {
@@ -244,6 +256,10 @@ export const researchExperiences: ResearchExperience[] = [
       "/research_experience/undergrad_project/1.jpg",
       "/research_experience/undergrad_project/2.jpg",
       "/research_experience/undergrad_project/3.jpg",
+    ],
+    description: [
+      "Explored the potential of an Electromagnetic Braking System, using electromagnetism to stop vehicles, highlighting its advantages and current limitations.",
+      "Emphasized the need for further research to overcome challenges and align with the shift toward electric-powered vehicles in the automobile industry.",
     ],
   },
 ];

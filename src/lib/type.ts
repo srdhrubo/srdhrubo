@@ -55,4 +55,5 @@ export interface ResearchExperience {
   thesisTitle?: string;
   projectTitle?: string;
   images?: string[];
+  description?: string[];
 }

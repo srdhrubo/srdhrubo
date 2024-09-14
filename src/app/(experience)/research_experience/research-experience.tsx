@@ -93,8 +93,8 @@ function ResearchExperienceCard({
                         </CarouselItem>
                       ))}
                     </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
+                    <CarouselPrevious className="max-lg:left-1 max-lg:opacity-60 max-lg:border max-lg:border-black" />
+                    <CarouselNext className="max-lg:right-1 max-lg:opacity-60 max-lg:border max-lg:border-black" />
                   </Carousel>
                 )}
               </div>

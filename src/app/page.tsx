@@ -57,7 +57,7 @@ const PaperSection = () => {
 
 const ProjectSection = () => {
   return (
-    <section className="p-global-padding space-y-10">
+    <section className="p-global-padding space-y-16">
       <div>
         <Card className="grid grid-cols-1 lg:grid-cols-5">
           <div className="col-span-1 lg:col-span-3 max-lg:h-52 relative">
@@ -104,22 +104,83 @@ const ProjectSection = () => {
       </div>
       <div className="flex flex-col gap-16 lg:flex-row lg:flex-wrap justify-center">
         {iframeVideos.map((link, idx) => (
-          <IFrame key={idx} link={link} idx={idx} />
+          <IFrame
+            key={idx}
+            link={link}
+            title={`Durbar Video 0${idx + 1}`}
+            classname="rounded-md w-full lg:w-[45%] aspect-video flex-shrink-0"
+          />
         ))}
+      </div>
+      <div>
+        <Card className="grid grid-cols-1 lg:grid-cols-5 overflow-hidden">
+          <div className="lg:col-span-2">
+            <CardHeader>
+              <CardTitle>
+                Our Team Participated in a TV Reality Show on National Media
+              </CardTitle>
+              <CardDescription>Published: 11 Apr 2019</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <CardTitle className="mb-4">
+                Esho Robot Banai - TV Reality Show
+              </CardTitle>
+              <p className="mb-2 text-justify">
+                We created a group interested in group projects after competing
+                in first competition, where we merged a number of groups who
+                previously worked separately. As this group contained a large
+                number of students we were able to find solution of any problem
+                easier and faster than before. It was also easier to use
+                components among ourselves and it was also financially
+                beneficial to us. Moreover it was easier to assign different
+                task to different individual whose interest were in different
+                sector. I had great interest in designing so, I tried to involve
+                myself on creating the design and also constructing as easily
+                possible using less resources.
+              </p>
+              <p className="text-justify">
+                Our hard work in this group were also aid off. We submitted few
+                ideas to the reality show authority and three of which got
+                selected among them. Where only five ideas among ours were
+                selected in total from our region.
+              </p>
+            </CardContent>
+            <CardFooter className="w-fit mx-auto">
+              <ButtonWithLink href="/research_experience">
+                MORE ABOUT MY PROJECTS
+              </ButtonWithLink>
+            </CardFooter>
+          </div>
+          <div className="col-span-1 lg:col-span-3">
+            <IFrame
+              link="https://www.youtube.com/embed/hw8olFmFJTw?si=0MweM5iHCCtAqtbI"
+              title="esho robot banai"
+              classname="w-full h-full max-lg:aspect-video"
+            />
+          </div>
+        </Card>
       </div>
     </section>
   );
 };
 
-const IFrame = ({ link, idx }: { link: string; idx: number }) => {
+const IFrame = ({
+  link,
+  title,
+  classname,
+}: {
+  link: string;
+  title: string;
+  classname?: string;
+}) => {
   return (
     <iframe
       src={link}
-      title={`Durbar Video 0${idx + 1}`}
+      title={title}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerPolicy="strict-origin-when-cross-origin"
       allowFullScreen
-      className="rounded-md w-full lg:w-[45%] aspect-video flex-shrink-0"
+      className={classname}
     ></iframe>
   );
 };

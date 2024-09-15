@@ -46,9 +46,9 @@ export interface AcamdemicInfo {
 
 export interface ResearchExperience {
   title: string;
-  institution: string;
+  institution?: string;
   group?: string;
-  supervisor: string;
+  supervisor?: string;
   startDate: string;
   endDate: string;
   type: "research" | "project" | "thesis";
@@ -56,6 +56,7 @@ export interface ResearchExperience {
   projectTitle?: string;
   images?: string[];
   description?: string[];
+  competition?: string;
 }
 
 export interface ProfessionalExperience {

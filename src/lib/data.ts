@@ -214,7 +214,7 @@ export const researchExperiences: ResearchExperience[] = [
     endDate: "April 2023",
     type: "project",
     images: [
-      "/research_experience/mars_rover/1.JPG",
+      "/research_experience/mars_rover/1.jpg",
       "/research_experience/mars_rover/2.JPG",
       "/research_experience/mars_rover/3.JPG",
       "/research_experience/mars_rover/4.JPG",
@@ -227,6 +227,7 @@ export const researchExperiences: ResearchExperience[] = [
       "Researched, designed, and developed a Mars rover using the rocker-bogie mechanism, including a manipulator arm capable of lifting over 5 kg.",
       "Led the team, coordinated with sub-teams, and participated in international rover challenges.",
     ],
+    competition: "Mars Rover Challenge",
   },
   {
     title: "Undergraduate Thesis",
@@ -266,6 +267,47 @@ export const researchExperiences: ResearchExperience[] = [
       "Explored the potential of an Electromagnetic Braking System, using electromagnetism to stop vehicles, highlighting its advantages and current limitations.",
       "Emphasized the need for further research to overcome challenges and align with the shift toward electric-powered vehicles in the automobile industry.",
     ],
+  },
+  {
+    title: "Drive Assisting Spectacle",
+    institution:
+      "Khulna University of Engineering & Technology (KUET), Khulna-9203",
+    startDate: "June 2019",
+    endDate: "July 2019",
+    type: "project",
+    images: ["/research_experience/esho_robot_banai/spectacle.JPG"],
+    description: [
+      "An spectacle we made to observe the condition of driver's eyes. On case sleeping condition were detected it  was able to slowly decrease the speed of car (in our case a simple toy car) and guide to a complete stop with audio warning to driver.",
+    ],
+    competition: "Esho Robot Banai (TV Reality Show)",
+  },
+
+  {
+    title: "Waste Collecting Robot",
+    institution:
+      "Khulna University of Engineering & Technology (KUET), Khulna-9203",
+    startDate: "April 2019",
+    endDate: "May 2019",
+    type: "project",
+    images: ["/research_experience/esho_robot_banai/waste_collector.JPG"],
+    description: [
+      "A simple robot capable of removing floating waste in pond or lake. It's belt allows it to take in waste t it's free waste storage space. According to initial concept we wanted to built a bot which is easy to construct and easily maneuverable.",
+    ],
+    competition: "Esho Robot Banai (TV Reality Show)",
+  },
+
+  {
+    title: "Underwater Searchbot",
+    institution:
+      "Khulna University of Engineering & Technology (KUET), Khulna-9203",
+    startDate: "February 2019",
+    endDate: "March 2019",
+    type: "project",
+    images: ["/research_experience/esho_robot_banai/sub.JPG"],
+    description: [
+      "This robot were built to have a look in underwater. Though it wasn't wireless but wired connection helped us to gain uninterrupted signal transfer to robot from the controller. Using two pairs of motor and propeller set we were able to control depth and planar movements of it in underwater. It was equipped with two cameras fitted inside the robot whose video feed were directly sent to controlling computer.",
+    ],
+    competition: "Esho Robot Banai (TV Reality Show)",
   },
 ];
 

@@ -95,7 +95,7 @@ const ProjectSection = () => {
               </p>
             </CardContent>
             <CardFooter className="w-fit mx-auto">
-              <ButtonWithLink href="/projects">
+              <ButtonWithLink href="/research_experience">
                 MORE ABOUT MY PROJECTS
               </ButtonWithLink>
             </CardFooter>

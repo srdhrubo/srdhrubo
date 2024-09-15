@@ -51,7 +51,6 @@ export const navLinks: NavItem[] = [
     pages: [
       { href: "/research_experience", title: "Research" },
       { href: "/professional_experience", title: "Professional" },
-      { href: "/projects", title: "Projects" },
     ],
   },
   {

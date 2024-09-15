@@ -67,3 +67,13 @@ export interface ProfessionalExperience {
   endDate?: string;
   responsibilities: string[];
 }
+
+export interface Reference {
+  name: string;
+  title: string;
+  department: string;
+  institution: string;
+  email: string;
+  phone: string;
+  image?: string;
+}

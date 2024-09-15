@@ -2,6 +2,7 @@ import {
   AcamdemicInfo,
   Paper,
   ProfessionalExperience,
+  Reference,
   ResearchExperience,
 } from "./type";
 
@@ -330,4 +331,23 @@ export const iframeVideos = [
   "https://www.youtube.com/embed/DxiYWCe7TLI?si=YT8crkoHQ3SxbKyZ",
   "https://www.youtube.com/embed/ML1VA-ceKm8?si=Rl9j48nhUpzdBQ7H",
   "https://www.youtube.com/embed/MtGT4qaSBn8?si=RHzaR016wVNLX56K",
+];
+
+export const references: Reference[] = [
+  {
+    name: "Dr. Md. Ashraful Islam",
+    title: "Professor",
+    department: "Department of Mechanical Engineering",
+    institution: "KUET",
+    email: "md.islam@me.kuet.ac.bd",
+    phone: "+8801786285393",
+  },
+  {
+    name: "Dr. Md. Helal-An-Nahiyan",
+    title: "Professor",
+    department: "Department of Mechanical Engineering",
+    institution: "KUET",
+    email: "nahiyan@me.kuet.ac.bd",
+    phone: "+8801781587733",
+  },
 ];

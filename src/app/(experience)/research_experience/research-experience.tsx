@@ -11,7 +11,13 @@ import {
 } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import { Badge } from "@/components/ui/badge";
-import { CalendarIcon, UserIcon, UsersIcon, BookOpenIcon } from "lucide-react";
+import {
+  CalendarIcon,
+  UserIcon,
+  UsersIcon,
+  BookOpenIcon,
+  TrophyIcon,
+} from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -21,14 +27,25 @@ import {
 } from "@/components/ui/carousel";
 import { ResearchExperience } from "@/lib/type";
 import { researchExperiences } from "@/lib/data";
+import dayjs from "dayjs";
 
 export default function ResearchExperienceSection() {
+  const sortedExperiences = researchExperiences.sort((a, b) => {
+    const dateA = a.endDate
+      ? new Date(a.endDate).getTime()
+      : new Date().getTime();
+    const dateB = b.endDate
+      ? new Date(b.endDate).getTime()
+      : new Date().getTime();
+    return dateB - dateA;
+  });
   return (
-    <div className="container mx-auto p-4" id="research_experience">
+    <div className="container mx-auto p-4 mb-8" id="research_experience">
       <div className="space-y-16">
-        {researchExperiences.map((experience, index) => (
-          <ResearchExperienceCard key={index} experience={experience} />
-        ))}
+        {sortedExperiences &&
+          sortedExperiences.map((experience, index) => (
+            <ResearchExperienceCard key={index} experience={experience} />
+          ))}
       </div>
     </div>
   );
@@ -50,9 +67,11 @@ function ResearchExperienceCard({
             <CardTitle className="text-xl font-bold">
               {experience.title}
             </CardTitle>
-            <CardDescription>
-              {experience.institution || experience.group}
-            </CardDescription>
+            {(experience.institution || experience.group) && (
+              <CardDescription>
+                {experience.institution || experience.group}
+              </CardDescription>
+            )}
           </div>
           <Badge variant="secondary" className="capitalize">
             {experience.type}
@@ -108,13 +127,15 @@ function ResearchExperienceCard({
                 {experience.startDate} - {experience.endDate}
               </p>
             </div>
-            <div className="flex items-center">
-              <UserIcon className="mr-2 h-4 w-4" />
-              <p className="text-sm">
-                <span className="font-semibold">Supervisor:</span>{" "}
-                {experience.supervisor}
-              </p>
-            </div>
+            {experience.supervisor && (
+              <div className="flex items-center">
+                <UserIcon className="mr-2 h-4 w-4" />
+                <p className="text-sm">
+                  <span className="font-semibold">Supervisor:</span>{" "}
+                  {experience.supervisor}
+                </p>
+              </div>
+            )}
             {experience.group && (
               <div className="flex items-center">
                 <UsersIcon className="mr-2 h-4 w-4" />
@@ -126,7 +147,7 @@ function ResearchExperienceCard({
             )}
             {(experience.thesisTitle || experience.projectTitle) && (
               <div className="flex items-start">
-                <BookOpenIcon className="mr-2 h-4 w-4 mt-1" />
+                <BookOpenIcon className="mr-2 h-4 w-4 mt-1 flex-shrink-0" />
                 <p className="text-sm">
                   <span className="font-semibold">
                     {experience.thesisTitle ? "Thesis" : "Project"} Title:
@@ -135,6 +156,15 @@ function ResearchExperienceCard({
                     {" "}
                     "{experience.thesisTitle || experience.projectTitle}"
                   </span>
+                </p>
+              </div>
+            )}
+            {experience.competition && (
+              <div className="flex items-center">
+                <TrophyIcon className="mr-2 h-4 w-4 text-yellow-500" />
+                <p className="text-sm">
+                  <span className="font-semibold">Competition:</span>{" "}
+                  {experience.competition}
                 </p>
               </div>
             )}

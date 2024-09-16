@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function AwardsAchievementsPage() {
   return (
     <section className="py-12 min-h-screen">
-      <div className="container mx-auto px-4">
+      <div className="p-global-padding">
         <h2 className="text-3xl font-bold text-center mb-8">
           Awards & Achievements
         </h2>

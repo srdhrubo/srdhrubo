@@ -49,7 +49,7 @@ const techSkills = {
 
 export default function Skills() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white py-16">
+    <div className="min-h-screen py-16">
       <div className="p-global-padding mx-auto">
         <h1 className="text-4xl font-bold mb-12 text-center">
           Technical Skills

@@ -40,7 +40,7 @@ export default function ResearchExperienceSection() {
     return dateB - dateA;
   });
   return (
-    <div className="container mx-auto p-4 mb-8" id="research_experience">
+    <div className="mb-8" id="research_experience">
       <div className="space-y-16">
         {sortedExperiences &&
           sortedExperiences.map((experience, index) => (

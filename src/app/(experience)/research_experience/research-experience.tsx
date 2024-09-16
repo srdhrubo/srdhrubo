@@ -59,6 +59,7 @@ function ResearchExperienceCard({
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
+
   return (
     <Card className="overflow-hidden">
       <CardHeader>
@@ -108,6 +109,7 @@ function ResearchExperienceCard({
                             width={800}
                             height={400}
                             className="w-full h-auto rounded-lg"
+                            unoptimized={image.split(".").pop() === "gif"}
                           />
                         </CarouselItem>
                       ))}

@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,6 +15,16 @@ import dayjs from "dayjs";
 import { ExternalLink } from "lucide-react";
 import { paperInformation } from "@/lib/data";
 import { Paper } from "@/lib/type";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Image from "next/image";
+import React from "react";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function PublicationSection() {
   const timelineData = timelineDataOrganizer();
@@ -61,6 +73,11 @@ const PaperCard = ({ paper }: { paper: Paper }) => {
 
     return formattedName;
   };
+
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
+
   return (
     <Card>
       <CardHeader>
@@ -101,6 +118,47 @@ const PaperCard = ({ paper }: { paper: Paper }) => {
             </Button>
           ) : (
             <Badge>{paper.status}</Badge>
+          )}
+        </div>
+        <div className="mt-8 mb-4">
+          {paper.images && paper.images.length > 0 && (
+            <div>
+              {paper.images.length === 1 ? (
+                <Image
+                  src={paper.images[0]}
+                  alt={`Image for ${paper.title}`}
+                  fill
+                  className="w-full h-auto rounded-lg object-contain"
+                />
+              ) : (
+                <Carousel
+                  className="w-full aspect-video max-w-2xl mx-auto"
+                  opts={{ loop: true, align: "center" }}
+                  plugins={[plugin.current]}
+                  onMouseEnter={plugin.current.stop}
+                  onMouseLeave={plugin.current.reset}
+                >
+                  <CarouselContent>
+                    {paper.images.map((image, index) => (
+                      <CarouselItem
+                        key={index}
+                        className="relative aspect-video"
+                      >
+                        <Image
+                          src={image}
+                          alt={`Image ${index + 1} for ${paper.title}`}
+                          fill
+                          className="w-full h-auto rounded-lg object-contain pr-4"
+                          unoptimized={image.split(".").pop() === "gif"}
+                        />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-1 opacity-60 border border-black" />
+                  <CarouselNext className="right-5 opacity-60 border border-black" />
+                </Carousel>
+              )}
+            </div>
           )}
         </div>
       </CardContent>

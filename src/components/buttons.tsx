@@ -1,6 +1,7 @@
 import { DownloadIcon } from "lucide-react";
-import { Button } from "./ui/button";
-import Link from "next/link";
+import { Button, ButtonProps } from "./ui/button";
+import Link, { LinkProps } from "next/link";
+import React from "react";
 
 export const ButtonWithLink = ({
   href,
@@ -11,7 +12,9 @@ export const ButtonWithLink = ({
 }) => {
   return (
     <Button asChild>
-      <Link href={href}>{children}</Link>
+      <Link href={href} target="_blank">
+        {children}
+      </Link>
     </Button>
   );
 };

@@ -15,6 +15,9 @@ import {
 import { LinkIcon } from "lucide-react";
 import { ButtonWithLink } from "@/components/buttons";
 import Image from "next/image";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { DialogTrigger } from "@radix-ui/react-dialog";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -61,20 +64,34 @@ const ProjectSection = () => {
       <div>
         <Card className="grid grid-cols-1 lg:grid-cols-5">
           <div className="col-span-1 lg:col-span-3 max-lg:h-52 relative">
-            <Link
-              target="_blank"
-              href="https://www.prothomalo.com/amp/story/lifestyle/%E0%A6%AC%E0%A6%BE%E0%A6%87%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A7%81%E0%A6%A8%E0%A6%B8%E0%A6%BE%E0%A6%A8-%E0%A6%AD%E0%A7%87%E0%A6%A4%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A6%B0%E0%A6%AC-%E0%A6%95%E0%A7%81%E0%A7%9F%E0%A7%87%E0%A6%9F"
-            >
-              <Image
-                src="/prothom-alo-feature.jpg"
-                alt="feature"
-                fill
-                className="w-full object-cover"
-              />
-            </Link>
-            <div className="absolute top-4 right-6 opacity-50">
-              <LinkIcon />
-            </div>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="ghost" className="p-0 h-auto">
+                  <Image
+                    src="/prothom-alo-feature.jpg"
+                    alt="feature"
+                    fill
+                    className="w-full object-cover"
+                  />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                <div className="relative">
+                  <Image
+                    src="/prothom-alo-feature.jpg"
+                    alt="feature"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <div className="mx-auto">
+                  <ButtonWithLink href="https://www.prothomalo.com/amp/story/lifestyle/%E0%A6%AC%E0%A6%BE%E0%A6%87%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A7%81%E0%A6%A8%E0%A6%B8%E0%A6%BE%E0%A6%A8-%E0%A6%AD%E0%A7%87%E0%A6%A4%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A6%B0%E0%A6%AC-%E0%A6%95%E0%A7%81%E0%A7%9F%E0%A7%87%E0%A6%9F">
+                    VIEW THE NEWS
+                  </ButtonWithLink>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
           <div className="lg:col-span-2">
             <CardHeader>

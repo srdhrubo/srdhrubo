@@ -28,6 +28,8 @@ import {
 import { ResearchExperience } from "@/lib/type";
 import { researchExperiences } from "@/lib/data";
 import dayjs from "dayjs";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 export default function ResearchExperienceSection() {
   const sortedExperiences = researchExperiences.sort((a, b) => {
@@ -85,13 +87,29 @@ function ResearchExperienceCard({
             {experience.images && experience.images.length > 0 && (
               <div className="mb-4">
                 {experience.images.length === 1 ? (
-                  <Image
-                    src={experience.images[0]}
-                    alt={`Image for ${experience.title}`}
-                    width={800}
-                    height={400}
-                    className="w-full h-auto rounded-lg"
-                  />
+                  <div className="relative aspect-video">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="ghost" className="p-0 h-auto">
+                          <Image
+                            src={experience.images[0]}
+                            alt={`Image for ${experience.title}`}
+                            fill
+                            className="w-full h-auto rounded-lg object-cover"
+                          />
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                        <Image
+                          src={experience.images[0]}
+                          alt={`Image for ${experience.title}`}
+                          width={1200}
+                          height={900}
+                          className="w-full h-auto rounded-lg object-contain"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </div>
                 ) : (
                   <Carousel
                     className="w-full max-w-2xl mx-auto"
@@ -102,15 +120,37 @@ function ResearchExperienceCard({
                   >
                     <CarouselContent>
                       {experience.images.map((image, index) => (
-                        <CarouselItem key={index}>
-                          <Image
-                            src={image}
-                            alt={`Image ${index + 1} for ${experience.title}`}
-                            width={800}
-                            height={400}
-                            className="w-full h-auto rounded-lg"
-                            unoptimized={image.split(".").pop() === "gif"}
-                          />
+                        <CarouselItem
+                          key={index}
+                          className="relative aspect-video"
+                        >
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <Button variant="ghost" className="p-0 h-auto">
+                                <Image
+                                  src={image}
+                                  alt={`Image ${index + 1} for ${
+                                    experience.title
+                                  }`}
+                                  fill
+                                  className="w-full h-auto object-cover"
+                                  unoptimized={image.split(".").pop() === "gif"}
+                                />
+                              </Button>
+                            </DialogTrigger>
+                            <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                              <Image
+                                src={image}
+                                alt={`Image ${index + 1} for ${
+                                  experience.title
+                                }`}
+                                width={1200}
+                                height={900}
+                                className="w-full h-auto rounded-lg object-contain"
+                                unoptimized={image.split(".").pop() === "gif"}
+                              />
+                            </DialogContent>
+                          </Dialog>
                         </CarouselItem>
                       ))}
                     </CarouselContent>

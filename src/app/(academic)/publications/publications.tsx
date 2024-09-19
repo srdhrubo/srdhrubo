@@ -15,16 +15,10 @@ import dayjs from "dayjs";
 import { ExternalLink } from "lucide-react";
 import { paperInformation } from "@/lib/data";
 import { Paper } from "@/lib/type";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import Image from "next/image";
 import React from "react";
 import Autoplay from "embla-carousel-autoplay";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 export default function PublicationSection() {
   const timelineData = timelineDataOrganizer();
@@ -120,47 +114,84 @@ const PaperCard = ({ paper }: { paper: Paper }) => {
             <Badge>{paper.status}</Badge>
           )}
         </div>
-        <div className="mt-8 mb-4">
-          {paper.images && paper.images.length > 0 && (
-            <div>
-              {paper.images.length === 1 ? (
-                <Image
-                  src={paper.images[0]}
-                  alt={`Image for ${paper.title}`}
-                  fill
-                  className="w-full h-auto rounded-lg object-contain"
-                />
-              ) : (
-                <Carousel
-                  className="w-full aspect-video max-w-2xl mx-auto"
-                  opts={{ loop: true, align: "center" }}
-                  plugins={[plugin.current]}
-                  onMouseEnter={plugin.current.stop}
-                  onMouseLeave={plugin.current.reset}
-                >
-                  <CarouselContent>
-                    {paper.images.map((image, index) => (
-                      <CarouselItem
-                        key={index}
-                        className="relative aspect-video"
-                      >
-                        <Image
-                          src={image}
-                          alt={`Image ${index + 1} for ${paper.title}`}
-                          fill
-                          className="w-full h-auto rounded-lg object-contain pr-4"
-                          unoptimized={image.split(".").pop() === "gif"}
-                        />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="left-1 opacity-60 border border-black" />
-                  <CarouselNext className="right-5 opacity-60 border border-black" />
-                </Carousel>
-              )}
+
+        {paper.images && (
+          <div className="relative h-60 overflow-hidden mt-8 mb-4">
+            <div
+              className={`grid ${
+                paper.images.length === 1 ? "grid-cols-1" : "grid-cols-2"
+              } gap-2`}
+            >
+              {paper.images.slice(0, 4).map((img, index) => (
+                <Dialog key={index}>
+                  <DialogTrigger asChild>
+                    <Button variant="ghost" className="p-0 h-auto">
+                      <Image
+                        src={img}
+                        alt={`${paper.title} design ${index + 1}`}
+                        width={300}
+                        height={200}
+                        className="w-full h-auto object-cover rounded-md cursor-pointer"
+                      />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                    <div className="relative">
+                      <Image
+                        src={img}
+                        alt={`${paper.title} design ${index + 1}`}
+                        width={1200}
+                        height={800}
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              ))}
             </div>
-          )}
-        </div>
+            {paper.images.length > 2 && (
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background to-transparent h-12 flex items-end justify-center">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="secondary" className="mb-2">
+                      View All ({paper.images.length} images)
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                      {paper.images.map((img, index) => (
+                        <Dialog key={index}>
+                          <DialogTrigger asChild>
+                            <Button variant="ghost" className="p-0 h-auto">
+                              <Image
+                                src={img}
+                                alt={`${paper.title} design ${index + 1}`}
+                                width={400}
+                                height={300}
+                                className="w-full h-auto object-cover rounded-md cursor-pointer"
+                              />
+                            </Button>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                            <div className="relative">
+                              <Image
+                                src={img}
+                                alt={`${paper.title} design ${index + 1}`}
+                                width={1200}
+                                height={800}
+                                className="w-full h-auto object-contain"
+                              />
+                            </div>
+                          </DialogContent>
+                        </Dialog>
+                      ))}
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+            )}
+          </div>
+        )}
       </CardContent>
     </Card>
   );

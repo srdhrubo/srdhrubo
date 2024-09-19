@@ -51,6 +51,7 @@ export const navLinks: NavItem[] = [
     pages: [
       { href: "/research_experience", title: "Research" },
       { href: "/professional_experience", title: "Professional" },
+      { href: "/design_portfolio", title: "Mechanical Design Portfolio" },
     ],
   },
   {
@@ -101,6 +102,7 @@ export default function NavigationBar() {
           width={40}
           height={40}
           className="block lg:hidden"
+          priority
         />
         <Image
           src="/logo_large.png"
@@ -108,6 +110,7 @@ export default function NavigationBar() {
           width={217}
           height={40}
           className="hidden lg:block aspect-auto"
+          priority
         />
       </Link>
       <NavigationMenu>

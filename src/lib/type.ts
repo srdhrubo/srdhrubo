@@ -77,3 +77,11 @@ export interface Reference {
   phone: string;
   image?: string;
 }
+
+export interface DesignPortfolioItem {
+  id: number;
+  name: string;
+  platform: string[];
+  images: string[];
+  description?: string;
+}

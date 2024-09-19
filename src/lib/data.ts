@@ -1,5 +1,6 @@
 import {
   AcamdemicInfo,
+  DesignPortfolioItem,
   Paper,
   ProfessionalExperience,
   Reference,
@@ -359,5 +360,171 @@ export const references: Reference[] = [
     institution: "KUET",
     email: "nahiyan@me.kuet.ac.bd",
     phone: "+8801781587733",
+  },
+];
+
+export const designPortfolioItems: DesignPortfolioItem[] = [
+  {
+    id: 1,
+    name: "Scientific Calculator",
+    platform: ["Solidworks", "Keyshot"],
+    images: [
+      "/design_portfolio/scientific_calculator/1.jpg",
+      "/design_portfolio/scientific_calculator/2.jpg",
+      "/design_portfolio/scientific_calculator/3.jpg",
+      "/design_portfolio/scientific_calculator/4.jpg",
+    ],
+  },
+  {
+    id: 2,
+    name: "Sunglass",
+    platform: ["Solidworks", "Keyshot"],
+    images: [
+      "/design_portfolio/sunglass/1.jpg",
+      "/design_portfolio/sunglass/2.jpg",
+    ],
+  },
+  {
+    id: 3,
+    name: "Speed Boat",
+    platform: ["Solidworks", "Keyshot"],
+    images: [
+      "/design_portfolio/speed_boat/1.jpg",
+      "/design_portfolio/speed_boat/2.jpg",
+    ],
+  },
+  {
+    id: 4,
+    name: "Drone",
+    platform: ["Solidworks", "Keyshot"],
+    images: ["/design_portfolio/drone/1.jpg", "/design_portfolio/drone/2.jpg"],
+  },
+  {
+    id: 5,
+    name: "Arduino Mega 2560",
+    platform: ["Solidworks", "Keyshot"],
+    images: ["/design_portfolio/arduino_mega_2560/1.jpg"],
+  },
+  {
+    id: 6,
+    name: "USB Type C Charger",
+    platform: ["Solidworks", "Keyshot"],
+    images: ["/design_portfolio/type_c_usb_charger/1.jpg"],
+  },
+  {
+    id: 7,
+    name: "L298N Stepper Motor Driver",
+    platform: ["Solidworks", "Keyshot"],
+    images: [
+      "/design_portfolio/L298N_stepper_motor_driver/1.jpg",
+      "/design_portfolio/L298N_stepper_motor_driver/2.jpg",
+    ],
+  },
+  {
+    id: 8,
+    name: "Mini Speaker",
+    platform: ["Solidworks", "Keyshot"],
+    images: [
+      "/design_portfolio/mini_speaker/1.jpg",
+      "/design_portfolio/mini_speaker/2.jpg",
+    ],
+  },
+  {
+    id: 9,
+    name: "Harmonium",
+    platform: ["Autocad", "Keyshot"],
+    images: ["/design_portfolio/harmonium/1.jpg"],
+  },
+  {
+    id: 10,
+    name: "Mouth Organ",
+    platform: ["Autocad", "Keyshot"],
+    images: ["/design_portfolio/mouth_organ/1.jpg"],
+  },
+  {
+    id: 11,
+    name: "Concept VTOL Aircraft",
+    platform: ["Solidworks", "Keyshot"],
+    images: [
+      "/design_portfolio/unmanned_aerial_vehicle/1.png",
+      "/design_portfolio/unmanned_aerial_vehicle/2.png",
+    ],
+  },
+  {
+    id: 12,
+    name: "Hearing Aid for Noise Cancellation",
+    platform: ["Solidworks"],
+    images: [
+      "/design_portfolio/hearing_aid_for_noise_cancellation/1.JPG",
+      "/design_portfolio/hearing_aid_for_noise_cancellation/2.JPG",
+    ],
+  },
+  {
+    id: 13,
+    name: "Watery Land Floating Dust Collector",
+    platform: ["Solidworks"],
+    images: [
+      "/design_portfolio/watery_land_floating_dust_collector/1.JPG",
+      "/design_portfolio/watery_land_floating_dust_collector/2.JPG",
+    ],
+  },
+  {
+    id: 14,
+    name: "Material Transport Mechanism",
+    platform: ["Solidworks"],
+    images: [
+      "/design_portfolio/material_transport_mechanism/1.JPG",
+      "/design_portfolio/material_transport_mechanism/2.JPG",
+    ],
+  },
+  {
+    id: 15,
+    name: "Magnetic Brake",
+    platform: ["Solidworks"],
+    images: ["/research_experience/undergrad_project/3.jpg"],
+  },
+  {
+    id: 16,
+    name: "Plastic Mold",
+    platform: ["Solidworks"],
+    images: [
+      "/design_portfolio/plastic_mold/1.jpg",
+      "/design_portfolio/plastic_mold/2.jpg",
+    ],
+  },
+  {
+    id: 17,
+    name: "Mistubishi Pajero",
+    platform: ["Solidworks"],
+    images: ["/design_portfolio/car/1.JPG", "/design_portfolio/car/2.JPG"],
+  },
+  {
+    id: 18,
+    name: "Mars Rover Team Project",
+    platform: ["Solidworks", "Keyshot"],
+    images: [
+      "/design_portfolio/mars_rover/1.jpg",
+      "/design_portfolio/mars_rover/2.jpg",
+      "/design_portfolio/mars_rover/3.jpg",
+      "/design_portfolio/mars_rover/4.jpg",
+      "/design_portfolio/mars_rover/5.jpg",
+      "/design_portfolio/mars_rover/6.jpg",
+      "/design_portfolio/mars_rover/7.jpg",
+      "/design_portfolio/mars_rover/8.jpg",
+      "/design_portfolio/mars_rover/9.jpg",
+      "/design_portfolio/mars_rover/10.jpg",
+      "/design_portfolio/mars_rover/11.jpg",
+      "/design_portfolio/mars_rover/12.jpg",
+      "/design_portfolio/mars_rover/13.jpg",
+      "/design_portfolio/mars_rover/14.JPG",
+      "/design_portfolio/mars_rover/15.JPG",
+      "/design_portfolio/mars_rover/16.JPG",
+      "/design_portfolio/mars_rover/17.jpg",
+      "/design_portfolio/mars_rover/18.jpg",
+      "/design_portfolio/mars_rover/19.jpg",
+      "/design_portfolio/mars_rover/20.jpg",
+      "/design_portfolio/mars_rover/21.jpg",
+      "/design_portfolio/mars_rover/22.jpg",
+    ],
   },
 ];

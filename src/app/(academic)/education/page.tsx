@@ -14,6 +14,9 @@ import { useState } from "react";
 import dayjs from "dayjs";
 import { academicInfo } from "@/lib/data";
 import { AcamdemicInfo } from "@/lib/type";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { BookOpenTextIcon } from "lucide-react";
 
 export default function EducationPage() {
   return (
@@ -79,7 +82,7 @@ const InstitutionCard = ({ info }: { info: AcamdemicInfo }) => {
           </CardHeader>
         </div>
       </div>
-      <CardContent className=" text-sm">
+      <CardContent className="text-sm">
         {info.degree &&
           info.degree.map((degree) => (
             <p className="font-semibold" key={degree.obtainedDegree}>
@@ -93,6 +96,14 @@ const InstitutionCard = ({ info }: { info: AcamdemicInfo }) => {
                 ` | Marks: ${degree.marksPercentage.toFixed(2)}%`}
             </p>
           ))}
+        {info.courseOutline && (
+          <Button variant="link" className="p-0 h-auto my-2 underline" asChild>
+            <Link href={info.courseOutline} target="_blank">
+              <BookOpenTextIcon className="h-4 w-4 mr-2" />
+              Course Outline
+            </Link>
+          </Button>
+        )}
         <p>
           {dayjs(info.started).format("MMMM YYYY")} -{" "}
           {dayjs(info.completed).format("MMMM YYYY")}

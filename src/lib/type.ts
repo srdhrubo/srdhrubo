@@ -42,6 +42,7 @@ export interface AcamdemicInfo {
   reminisce: string;
   cover: string;
   logo: string;
+  courseOutline?: string;
 }
 
 export interface ResearchExperience {

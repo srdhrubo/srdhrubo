@@ -21,10 +21,11 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="scroll-smooth space-y-8 mb-16">
+    <div className="scroll-smooth space-y-10 mb-16">
       <HeroSection />
       <PaperSection />
       <ProjectSection />
+      <DesignGridSection />
     </div>
   );
 }
@@ -134,7 +135,8 @@ const ProjectSection = () => {
           <div className="lg:col-span-2">
             <CardHeader>
               <CardTitle>
-                Our Team Participated in a TV Reality Show on National Media
+                Our Team Participated in a Robotics TV Reality Show on National
+                Media
               </CardTitle>
               <CardDescription>Published: 11 Apr 2019</CardDescription>
             </CardHeader>
@@ -199,5 +201,75 @@ const IFrame = ({
       allowFullScreen
       className={classname}
     ></iframe>
+  );
+};
+
+const DesignGridSection = () => {
+  return (
+    <section className="p-global-padding">
+      <Card className="lg:flex rounded-xl">
+        <div className="w-full lg:max-w-2xl grid grid-cols-3 grid-rows-3 gap-2 aspect-[16/12] p-2 flex-shrink-0">
+          <ImageGridItem
+            src="/design_grid/flying_rover.png"
+            imageTitle="Flying Rover"
+            className="col-span-2 rounded-ss-lg bg-gradient-to-r from-gray-200 via-white to-gray-200"
+          />
+          <ImageGridItem
+            src="/design_grid/mars_rover.png"
+            imageTitle="Mars Rover"
+            className="row-span-2 rounded-se-lg bg-gradient-to-b from-gray-200 via-white to-gray-200"
+          />
+          <ImageGridItem
+            src="/design_grid/calculator.png"
+            imageTitle="Scientific Calculator"
+            className="row-span-2 flex items-center justify-center rounded-es-lg bg-gradient-to-b from-gray-200 via-white to-gray-200"
+          />
+          <ImageGridItem src="/design_grid/drone.jpg" imageTitle="Drone" />
+          <ImageGridItem
+            src="/design_grid/speed_boat.png"
+            imageTitle="Speed Boat"
+            className="col-span-2 rounded-ee-lg bg-gradient-to-r from-gray-200 via-white to-gray-200"
+          />
+        </div>
+        <div className="w-full">
+          <CardHeader className="hidden lg:block">
+            <CardTitle>
+              Some Highlights of My Mechanical Design Portfolio
+            </CardTitle>
+          </CardHeader>
+          <CardFooter>
+            <div className="mx-auto mt-4">
+              <ButtonWithLink href="/design_portolio">
+                VIEW MY 3D DESIGNS
+              </ButtonWithLink>
+            </div>
+          </CardFooter>
+        </div>
+      </Card>
+    </section>
+  );
+};
+
+const ImageGridItem = ({
+  className,
+  src,
+  imageTitle,
+}: {
+  className?: string;
+  src: string;
+  imageTitle: string;
+}) => {
+  return (
+    <div className={`overflow-hidden relative group ${className}`}>
+      <Image src={src} alt={imageTitle} fill className="object-contain" />
+      {imageTitle && (
+        <div className="hidden md:block">
+          <div className="absolute inset-0 bg-gradient-to-t from-white from-10% to-50% opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
+          <div className="absolute bottom-0 left-0 right-0 p-2 text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 className="text-lg font-bold">{imageTitle}</h3>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };

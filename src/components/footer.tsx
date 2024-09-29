@@ -6,6 +6,8 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { navLinks, moreLinks, PageLink, NavItem } from "./NavBar";
 import { Meteors } from "./ui/meteors";
+import React from "react";
+import { CVDownloadButton, ResumeDownloadButton } from "./buttons";
 
 export default function Footer() {
   return (
@@ -24,17 +26,9 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col lg:items-end gap-4">
-          <Button variant="secondary" className="w-32" asChild>
-            <Link href="/download/cv">
-              CV <DownloadIcon className="w-4 ml-2" />
-            </Link>
-          </Button>
-          <Button variant="secondary" className="w-32" asChild>
-            <Link href="/download/resume">
-              RESUME <DownloadIcon className="w-4 ml-2" />
-            </Link>
-          </Button>
-          <div className="flex items-center gap-4">
+          <CVDownloadButton footer={true} />
+          <ResumeDownloadButton footer={true} />
+          <div className="flex items-center gap-5">
             <Link href="mailto:srdhrubo97@gmail.com" target="_blank">
               <MailIcon className="w-5" />
             </Link>

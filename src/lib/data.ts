@@ -146,7 +146,7 @@ export const academicInfo: AcamdemicInfo[] = [
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, libero eos illo est sunt dicta? Rerum tempora, repellendus deleniti, omnis molestias doloribus quae ipsa labore non totam recusandae, exercitationem ipsum!`,
     cover: "/kuet.jpg",
     logo: "/kuet_logo.png",
-    courseOutline: "/download/course_outline/bsc",
+    courseOutline: "bsc.pdf",
   },
   {
     institution: "Saint Joseph Higher Secondary School",

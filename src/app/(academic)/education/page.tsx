@@ -98,7 +98,7 @@ const InstitutionCard = ({ info }: { info: AcamdemicInfo }) => {
           ))}
         {info.courseOutline && (
           <Button variant="link" className="p-0 h-auto my-2 underline" asChild>
-            <Link href={info.courseOutline} target="_blank">
+            <Link href={`/api/view/${info.courseOutline}`} target="_blank">
               <BookOpenTextIcon className="h-4 w-4 mr-2" />
               Course Outline
             </Link>

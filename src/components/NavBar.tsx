@@ -74,6 +74,11 @@ export default function NavigationBar() {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    setLastScrollY(scrollTop);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setLastScrollY(window.scrollY);
     };

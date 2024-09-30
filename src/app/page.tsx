@@ -239,7 +239,7 @@ const DesignGridSection = () => {
           </CardHeader>
           <CardFooter>
             <div className="mx-auto mt-4">
-              <ButtonWithLink href="/design_portolio">
+              <ButtonWithLink href="/design_portfolio">
                 VIEW MY 3D DESIGNS
               </ButtonWithLink>
             </div>

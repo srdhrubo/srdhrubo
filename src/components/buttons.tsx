@@ -14,7 +14,11 @@ export const ButtonWithLink = ({
   href: string;
   children: React.ReactNode;
 }) => {
-  return <Button onClick={() => openFileInNewTab(href)}>{children}</Button>;
+  return (
+    <Button asChild>
+      <Link href={href}>{children}</Link>
+    </Button>
+  );
 };
 
 const MergedButtons = ({

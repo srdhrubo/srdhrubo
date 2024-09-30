@@ -12,6 +12,7 @@ import {
   LinkedinIcon,
 } from "lucide-react";
 import { MdWhatsapp } from "react-icons/md";
+import ContactForm from "./contact-form";
 
 interface SocialLink {
   name: string;
@@ -125,25 +126,7 @@ export default function ContactsPage() {
           </Card>
         </div>
 
-        <Card className="mb-12">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold">Send a Message</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input placeholder="Your Name" />
-                <Input placeholder="Your Email" type="email" />
-              </div>
-              <Input placeholder="Subject" />
-              <Textarea placeholder="Your Message" rows={6} />
-              <Button className="w-full md:w-auto">
-                Send Message
-                <SendIcon className="ml-2 h-4 w-4" />
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+        <ContactForm />
       </div>
     </div>
   );

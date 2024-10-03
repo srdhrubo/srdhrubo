@@ -1,12 +1,21 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  PageDescription,
+  PageTitle,
+} from "@/components/ui/page-header-description";
 
 export default function CoCurricularsPage() {
   return (
-    <section className="py-12 min-h-screen">
-      <div className="p-global-padding">
-        <h2 className="text-3xl font-bold text-center mb-8">
-          Leadership Experience
-        </h2>
+    <div className="min-h-screen">
+      <div className="p-global-padding py-12">
+        <header>
+          <PageTitle>Leadership Experience</PageTitle>
+          <PageDescription>
+            Highlights of key leadership roles that demonstrate my ability to
+            guide teams, manage projects, and contribute to organizational
+            growth.
+          </PageDescription>
+        </header>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card>
             <CardHeader>
@@ -49,6 +58,6 @@ export default function CoCurricularsPage() {
           </Card>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

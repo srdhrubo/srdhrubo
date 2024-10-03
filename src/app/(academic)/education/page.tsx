@@ -17,16 +17,20 @@ import { AcamdemicInfo } from "@/lib/type";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BookOpenTextIcon } from "lucide-react";
+import {
+  PageDescription,
+  PageTitle,
+} from "@/components/ui/page-header-description";
 
 export default function EducationPage() {
   return (
-    <div className="p-global-padding">
+    <div className="p-global-padding py-12">
       {/* Header Section */}
-      <header className="text-center py-10">
-        <h1 className="text-4xl font-bold">Education Background</h1>
-        <p className="text-gray-600 mt-2">
+      <header>
+        <PageTitle>Education Background</PageTitle>
+        <PageDescription>
           Explore my academic journey, and some flashbacks of my student life.
-        </p>
+        </PageDescription>
       </header>
 
       {/* Educational History */}

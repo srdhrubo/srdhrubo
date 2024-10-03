@@ -10,6 +10,10 @@ import { Badge } from "@/components/ui/badge";
 import dayjs from "dayjs";
 import { experiences } from "@/lib/data";
 import { ProfessionalExperience } from "@/lib/type";
+import {
+  PageDescription,
+  PageTitle,
+} from "@/components/ui/page-header-description";
 
 const ProfessionalExperienceCard = ({
   experience,
@@ -58,17 +62,20 @@ const ProfessionalExperienceSection = ({
   experiences: ProfessionalExperience[];
 }) => {
   return (
-    <div
-      className="p-global-padding mx-auto my-12"
-      id="professional_experience"
-    >
-      <h1 className="text-4xl font-bold mb-12 text-center">
-        Professional Experiences
-      </h1>
-      <div className="space-y-6">
-        {experiences.map((experience, index) => (
-          <ProfessionalExperienceCard key={index} experience={experience} />
-        ))}
+    <div className="min-h-screen">
+      <div className="p-global-padding py-12" id="professional_experience">
+        <header>
+          <PageTitle>Professional Experiences</PageTitle>
+          <PageDescription>
+            Highlighting diverse professional experiences across industries,
+            emphasizing key roles, achievements, and career growth.
+          </PageDescription>
+        </header>
+        <div className="space-y-6">
+          {experiences.map((experience, index) => (
+            <ProfessionalExperienceCard key={index} experience={experience} />
+          ))}
+        </div>
       </div>
     </div>
   );

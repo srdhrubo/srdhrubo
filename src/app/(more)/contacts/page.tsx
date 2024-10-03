@@ -13,6 +13,10 @@ import {
 } from "lucide-react";
 import { MdWhatsapp } from "react-icons/md";
 import ContactForm from "./contact-form";
+import {
+  PageDescription,
+  PageTitle,
+} from "@/components/ui/page-header-description";
 
 interface SocialLink {
   name: string;
@@ -42,13 +46,13 @@ export default function ContactsPage() {
   return (
     <div className="min-h-screen">
       <div className="mx-auto p-global-padding py-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">
-          Get in Touch
-        </h1>
-        <p className="text-xl text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          I'm always open to new opportunities, collaborations, or just a
-          friendly chat about research and technology. Feel free to reach out!
-        </p>
+        <header>
+          <PageTitle>Get in Touch</PageTitle>
+          <PageDescription>
+            I'm always open to new opportunities, collaborations, or just a
+            friendly chat about research and technology. Feel free to reach out!
+          </PageDescription>
+        </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <Card className="md:col-span-2">

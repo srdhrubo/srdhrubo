@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { MailIcon, PhoneIcon } from "lucide-react";
 import { Reference } from "@/lib/type";
 import { references } from "@/lib/data";
+import { PageTitle } from "@/components/ui/page-header-description";
 
 const ReferenceCardWithImage: React.FC<{ reference: Reference }> = ({
   reference,
@@ -92,9 +93,11 @@ const ReferenceCardWithoutImage: React.FC<{ reference: Reference }> = ({
 
 const References: React.FC<{ references: Reference[] }> = ({ references }) => {
   return (
-    <section className="py-12 bg-background" id="references">
-      <div className="p-global-padding mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8">References</h2>
+    <div className="min-h-screen" id="references">
+      <div className="p-global-padding py-12 mx-auto">
+        <header>
+          <PageTitle classname="mb-12">References</PageTitle>
+        </header>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {references.map((reference, index) =>
             reference.image ? (
@@ -105,7 +108,7 @@ const References: React.FC<{ references: Reference[] }> = ({ references }) => {
           )}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -10,15 +10,24 @@ import {
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { designPortfolioItems } from "@/lib/data";
+import {
+  PageDescription,
+  PageTitle,
+} from "@/components/ui/page-header-description";
 
 export default function DesignPortfolio() {
   return (
-    <section>
-      <div className="p-global-padding my-12">
-        <h1 className="text-3xl font-bold mb-12 text-center">
-          Mechanical Design Portfolio
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div>
+      <div className="p-global-padding py-12">
+        <header>
+          <PageTitle>Mechanical Design Portfolio</PageTitle>
+          <PageDescription classname="md:max-w-3xl">
+            Explore innovative mechanical design projects showcasing CAD
+            modeling, prototyping, and real-world solutions with precision and
+            creativity
+          </PageDescription>
+        </header>
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {designPortfolioItems.map((item) => (
             <Card key={item.id} className="overflow-hidden">
               <CardHeader>
@@ -114,8 +123,8 @@ export default function DesignPortfolio() {
               )}
             </Card>
           ))}
-        </div>
+        </section>
       </div>
-    </section>
+    </div>
   );
 }

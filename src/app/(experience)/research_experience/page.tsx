@@ -1,18 +1,20 @@
 import React from "react";
 import ResearchExperienceSection from "./research-experience";
+import {
+  PageDescription,
+  PageTitle,
+} from "@/components/ui/page-header-description";
 
 export default function ResearchExperiencePage() {
   return (
-    <div className="p-global-padding w-full antialiased">
-      <header className="max-w-7xl text-center py-10 mx-auto">
-        <h1 className="text-4xl font-bold">
-          Research Experience and Contributions
-        </h1>
-        <p className="text-gray-600 mt-2 px-10">
+    <div className="p-global-padding py-12 w-full antialiased">
+      <header>
+        <PageTitle>Research Experience and Contributions</PageTitle>
+        <PageDescription classname="md:max-w-3xl">
           Discover my research journey, highlighting key contributions that
           reflect my commitment to advancing knowledge and solutions in the
           field.
-        </p>
+        </PageDescription>
       </header>
       <ResearchExperienceSection />
     </div>

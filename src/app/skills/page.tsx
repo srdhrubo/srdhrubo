@@ -1,5 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
+  PageDescription,
+  PageTitle,
+} from "@/components/ui/page-header-description";
+import {
   Code2Icon,
   CpuIcon,
   LayersIcon,
@@ -49,12 +53,16 @@ const techSkills = {
 
 export default function Skills() {
   return (
-    <div className="min-h-screen py-16">
-      <div className="p-global-padding mx-auto">
-        <h1 className="text-4xl font-bold mb-12 text-center">
-          Technical Skills
-        </h1>
-
+    <div className="min-h-screen">
+      <div className="p-global-padding py-12 mx-auto">
+        <header>
+          <PageTitle>Technical Skills</PageTitle>
+          <PageDescription>
+            A detailed summary of core technical competencies across software,
+            hardware, programming, and operational skills, highlighting
+            proficiency in tools essential for engineering and design projects.
+          </PageDescription>
+        </header>
         <div className="grid md:grid-cols-2 gap-8">
           <SkillsCard skillSet={techSkills.analysisSoftware} />
 

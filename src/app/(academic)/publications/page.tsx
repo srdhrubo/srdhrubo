@@ -1,14 +1,18 @@
+import {
+  PageDescription,
+  PageTitle,
+} from "@/components/ui/page-header-description";
 import PublicationSection from "./publications";
 
 export default function PublicationPage() {
   return (
-    <div className="p-global-padding">
-      <header className="max-w-7xl text-center py-10 mx-auto">
-        <h1 className="text-4xl font-bold">Publications</h1>
-        <p className="text-gray-600 mt-2 px-10">
+    <div className="p-global-padding py-12">
+      <header>
+        <PageTitle>Publications</PageTitle>
+        <PageDescription>
           Explore key research publications, including journal articles,
           conference papers, and collaborative works.
-        </p>
+        </PageDescription>
       </header>
       <PublicationSection />
     </div>

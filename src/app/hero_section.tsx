@@ -69,12 +69,7 @@ export default function HeroSection() {
       `}</style>
     </div>
   );
-  const description = (
-    <div className="space-x-6 w-full text-center">
-      <CVDownloadButton />
-      <ResumeDownloadButton />
-    </div>
-  );
+
   return (
     <div className="h-[150vh] mb-60" ref={ref}>
       <GoogleGeminiEffect
@@ -87,7 +82,6 @@ export default function HeroSection() {
         ]}
         className="hidden md:block w-full"
         title={title}
-        description={description}
       />
     </div>
   );

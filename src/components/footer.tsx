@@ -27,7 +27,6 @@ export default function Footer() {
 
         <div className="flex flex-col lg:items-end gap-4">
           <CVDownloadButton footer={true} />
-          <ResumeDownloadButton footer={true} />
           <div className="flex items-center gap-5">
             <Link href="mailto:srdhrubo97@gmail.com" target="_blank">
               <MailIcon className="w-5" />

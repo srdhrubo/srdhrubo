@@ -137,7 +137,6 @@ export default function NavigationBar() {
                   ))}
                   <li className="flex gap-4 pl-4">
                     <CVDownloadButton />
-                    <ResumeDownloadButton />
                   </li>
                 </div>
                 <div>

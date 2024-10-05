@@ -4,7 +4,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Mail } from "lucide-react";
+import { AlignJustifyIcon, Mail, MenuIcon } from "lucide-react";
 import { Linkedin } from "lucide-react";
 import { Phone } from "lucide-react";
 import { DownloadIcon } from "lucide-react";
@@ -26,6 +26,8 @@ import {
   TooltipContent,
 } from "@radix-ui/react-tooltip";
 import { CVDownloadButton, ResumeDownloadButton } from "./buttons";
+import { Button } from "./ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
 export type PageLink = {
   href: string;
@@ -96,17 +98,17 @@ export default function NavigationBar() {
         lastScrollY === 0
           ? ""
           : lastScrollY > 100
-          ? "bg-white shadow-xl mx-[8.5%] px-[1.5%] top-2 rounded-full border"
+          ? "bg-white shadow-xl max-sm:mx-1 mx-[8.5%] max-sm:px-3 max-sm:pr-3 px-[1.5%] top-2 rounded-full border"
           : "-translate-y-full"
       }`}
     >
-      <Link href="/" className="z-10">
+      <Link href="/" className="z-10 flex-shrink-0">
         <Image
           src="/logo.png"
           alt="Logo"
           width={40}
           height={40}
-          className="block lg:hidden"
+          className="block md:hidden"
           priority
         />
         <Image
@@ -114,62 +116,133 @@ export default function NavigationBar() {
           alt="Logo"
           width={217}
           height={40}
-          className="hidden lg:block aspect-auto"
+          className="hidden md:block aspect-auto"
           priority
         />
       </Link>
-      <NavigationMenu>
-        <NavigationMenuList>
-          {navLinks.map((navItem) => (
-            <NavItemComponent key={navItem.title} navItem={navItem} />
-          ))}
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>More</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="flex justify-between p-6 w-[450px]">
-                <div className="grid gap-3">
-                  {moreLinks.map((link) => (
-                    <ListItem
-                      href={link.href}
-                      title={link.title}
-                      key={link.href}
-                    />
-                  ))}
-                  <li className="flex gap-4 pl-4">
-                    <CVDownloadButton />
-                  </li>
-                </div>
-                <div>
-                  <li className="flex flex-col gap-4 pl-4 items-center h-full justify-center">
-                    <ToolTipComponent content="srdhrubo97@gmail.com">
-                      <a href="mailto:srdhrubo97@gmail.com" target="_blank">
-                        <Mail className="w-6" />
-                      </a>
-                    </ToolTipComponent>
-                    <ToolTipComponent content="https://www.linkedin.com/in/srdhrubo/">
-                      <a
-                        href="https://www.linkedin.com/in/srdhrubo/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Linkedin className="w-6" />
-                      </a>
-                    </ToolTipComponent>
-                    <ToolTipComponent content="+8801531783368">
-                      <a href="tel:+8801531783368">
-                        <Phone className="w-6" />
-                      </a>
-                    </ToolTipComponent>
-                  </li>
-                </div>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+      <div className="hidden lg:block">
+        <DesktopNavigation />
+      </div>
+      <div className="block lg:hidden">
+        <MobileNavigation />
+      </div>
     </div>
   );
 }
+
+const DesktopNavigation = () => (
+  <NavigationMenu>
+    <NavigationMenuList>
+      {navLinks.map((navItem) => (
+        <NavItemComponent key={navItem.title} navItem={navItem} />
+      ))}
+      <NavigationMenuItem>
+        <NavigationMenuTrigger>More</NavigationMenuTrigger>
+        <NavigationMenuContent>
+          <ul className="flex justify-between p-6 w-[450px]">
+            <div className="grid gap-3">
+              {moreLinks.map((link) => (
+                <ListItem href={link.href} title={link.title} key={link.href} />
+              ))}
+              <li className="flex gap-4 pl-4">
+                <CVDownloadButton />
+              </li>
+            </div>
+            <div>
+              <li className="flex flex-col gap-4 pl-4 items-center h-full justify-center">
+                <ContactIcons />
+              </li>
+            </div>
+          </ul>
+        </NavigationMenuContent>
+      </NavigationMenuItem>
+    </NavigationMenuList>
+  </NavigationMenu>
+);
+
+const MobileNavigation = () => (
+  <Sheet>
+    <SheetTrigger asChild>
+      <Button variant="ghost" size="icon">
+        <MenuIcon className="h-6 w-6" />
+        <span className="sr-only">Toggle menu</span>
+      </Button>
+    </SheetTrigger>
+    <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-auto">
+      <nav className="flex flex-col h-full">
+        <ul className="flex-grow">
+          {navLinks.map((navItem) => (
+            <li key={navItem.title} className="mb-4">
+              {navItem.href ? (
+                <Link href={navItem.href} className="text-lg font-semibold">
+                  {navItem.title}
+                </Link>
+              ) : (
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">
+                    {navItem.title}
+                  </h3>
+                  <ul className="pl-4">
+                    {navItem.pages?.map((page) => (
+                      <li key={page.href} className="mb-2">
+                        <Link href={page.href} className="text-sm">
+                          {page.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </li>
+          ))}
+          {moreLinks.map((link) => (
+            <li key={link.href} className="mb-2">
+              <Link href={link.href} className="text-sm">
+                {link.title}
+              </Link>
+            </li>
+          ))}
+          <li className="mt-4 mb-4">
+            <CVDownloadButton />
+          </li>
+        </ul>
+        <div className="mt-auto">
+          <div className="flex gap-6 justify-center my-4">
+            <ContactIcons />
+          </div>
+        </div>
+      </nav>
+    </SheetContent>
+  </Sheet>
+);
+
+const ContactIcons = () => (
+  <>
+    <ToolTipComponent content="srdhrubo97@gmail.com">
+      <a
+        href="mailto:srdhrubo97@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Mail className="w-6" />
+      </a>
+    </ToolTipComponent>
+    <ToolTipComponent content="https://www.linkedin.com/in/srdhrubo/">
+      <a
+        href="https://www.linkedin.com/in/srdhrubo/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Linkedin className="w-6" />
+      </a>
+    </ToolTipComponent>
+    <ToolTipComponent content="+8801531783368">
+      <a href="tel:+8801531783368">
+        <Phone className="w-6" />
+      </a>
+    </ToolTipComponent>
+  </>
+);
 
 const NavItemComponent = ({ navItem }: { navItem: NavItem }) => {
   const { title, href, pages } = navItem;

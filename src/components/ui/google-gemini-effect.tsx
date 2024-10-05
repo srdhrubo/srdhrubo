@@ -15,11 +15,13 @@ export const GoogleGeminiEffect = ({
   pathLengths,
   title,
   description,
+  highlight,
   className,
 }: {
   pathLengths: MotionValue[];
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
+  highlight: string | React.ReactNode;
   className?: string;
 }) => {
   return (
@@ -27,26 +29,7 @@ export const GoogleGeminiEffect = ({
       <div>{title || `Build with Aceternity UI`}</div>
       <div>{description && description}</div>
       <div className="w-full h-[890px] -top-60 md:-top-24 -z-10 flex items-center justify-center gap-4 absolute">
-        <button className="p-[3.5px] relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-          <div className="flex">
-            <Link
-              href="/api/view/cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="p-3 px-6 bg-black rounded-l-[6px] relative group transition duration-200 text-white text-base hover:bg-transparent">
-                CV
-              </div>
-            </Link>
-            <div className="w-[2px] bg-gray-400" />
-            <Link href="/contacts">
-              <div className="flex gap-2 items-center p-3 px-4 bg-black rounded-r-[6px] relative group transition duration-200 text-white text-base hover:bg-transparent">
-                GET IN TOUCH <Pointer className="w-5" />
-              </div>
-            </Link>
-          </div>
-        </button>
+        {highlight}
       </div>
       <svg
         width="1440"

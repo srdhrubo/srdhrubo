@@ -4,7 +4,7 @@ import { DownloadIcon, LinkedinIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { MdWhatsapp } from "react-icons/md";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { navLinks, moreLinks, PageLink, NavItem } from "./NavBar";
+import { navLinks, moreLinks, PageLink, NavItem } from "./navbar";
 import { Meteors } from "./ui/meteors";
 import React from "react";
 import { CVDownloadButton, ResumeDownloadButton } from "./buttons";

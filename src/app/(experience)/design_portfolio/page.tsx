@@ -35,7 +35,7 @@ export default function DesignPortfolio() {
                 <CardDescription>{item.platform.join(", ")}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative max-sm:h-auto h-48 overflow-hidden">
                   <div
                     className={`grid ${
                       item.images.length === 1 ? "grid-cols-1" : "grid-cols-2"
@@ -54,7 +54,7 @@ export default function DesignPortfolio() {
                             />
                           </Button>
                         </DialogTrigger>
-                        <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                        <DialogContent className="max-w-[95vw] lg:max-w-4xl max-h-[95vh] overflow-y-auto">
                           <div className="relative">
                             <Image
                               src={img}
@@ -76,7 +76,7 @@ export default function DesignPortfolio() {
                             View All ({item.images.length} images)
                           </Button>
                         </DialogTrigger>
-                        <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                        <DialogContent className="max-w-[95vw] lg:max-w-4xl max-h-[95vh] overflow-y-auto">
                           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                             {item.images.map((img, index) => (
                               <Dialog key={index}>
@@ -94,7 +94,7 @@ export default function DesignPortfolio() {
                                     />
                                   </Button>
                                 </DialogTrigger>
-                                <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                                <DialogContent className="max-w-[95vw] lg:max-w-4xl max-h-[95vh] overflow-y-auto">
                                   <div className="relative">
                                     <Image
                                       src={img}

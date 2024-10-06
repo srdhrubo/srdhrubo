@@ -9,7 +9,12 @@ export function PageTitle({
   classname?: string;
 }) {
   return (
-    <h1 className={cn("text-4xl font-bold text-center mb-8", classname)}>
+    <h1
+      className={cn(
+        "max-sm:text-3xl text-4xl font-bold text-center mb-8",
+        classname
+      )}
+    >
       {children}
     </h1>
   );
@@ -25,7 +30,7 @@ export function PageDescription({
   return (
     <p
       className={cn(
-        "text-xl text-center text-muted-foreground mb-12 md:max-w-2xl mx-auto",
+        "max-sm:text-base text-xl text-center text-muted-foreground mb-12 md:max-w-2xl mx-auto",
         classname
       )}
     >

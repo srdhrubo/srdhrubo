@@ -99,7 +99,7 @@ function ResearchExperienceCard({
                           />
                         </Button>
                       </DialogTrigger>
-                      <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                      <DialogContent className="max-w-[95vw] lg:max-w-4xl max-h-[95vh] overflow-y-auto">
                         <Image
                           src={experience.images[0]}
                           alt={`Image for ${experience.title}`}
@@ -138,7 +138,7 @@ function ResearchExperienceCard({
                                 />
                               </Button>
                             </DialogTrigger>
-                            <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                            <DialogContent className="max-w-[95vw] lg:max-w-4xl max-h-[95vh] overflow-y-auto">
                               <Image
                                 src={image}
                                 alt={`Image ${index + 1} for ${

@@ -98,7 +98,7 @@ export default function NavigationBar() {
         lastScrollY === 0
           ? ""
           : lastScrollY > 100
-          ? "bg-white shadow-xl max-sm:mx-1 mx-[8.5%] max-sm:px-3 max-sm:pr-3 px-[1.5%] top-2 rounded-full border"
+          ? "bg-white shadow-xl max-sm:mx-1 mx-[8.5%] max-sm:px-3 px-[1.5%] top-2 rounded-full border"
           : "-translate-y-full"
       }`}
     >

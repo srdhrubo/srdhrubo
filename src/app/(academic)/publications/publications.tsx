@@ -40,7 +40,7 @@ export default function PublicationSection() {
           </TabsContent>
           <TabsContent
             value="in progress"
-            className="space-y-8 lg:px-20 mb-20 mt-40"
+            className="space-y-8 lg:px-20 mb-20 mt-40 max-sm:mt-16"
           >
             {inProgressData.map((paper) => (
               <PaperCard key={paper.id} paper={paper} />
@@ -116,7 +116,7 @@ const PaperCard = ({ paper }: { paper: Paper }) => {
         </div>
 
         {paper.images && (
-          <div className="relative h-60 overflow-hidden mt-8 mb-4">
+          <div className="relative overflow-hidden mt-8 mb-4">
             <div
               className={`grid ${
                 paper.images.length === 1 ? "grid-cols-1" : "grid-cols-2"
@@ -135,7 +135,7 @@ const PaperCard = ({ paper }: { paper: Paper }) => {
                       />
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                  <DialogContent className="max-w-[95vw] lg:max-w-4xl max-h-[95vh] overflow-y-auto">
                     <div className="relative">
                       <Image
                         src={img}
@@ -157,7 +157,7 @@ const PaperCard = ({ paper }: { paper: Paper }) => {
                       View All ({paper.images.length} images)
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                  <DialogContent className="max-w-[95vw] lg:max-w-4xl max-h-[95vh] overflow-y-auto">
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       {paper.images.map((img, index) => (
                         <Dialog key={index}>
@@ -172,7 +172,7 @@ const PaperCard = ({ paper }: { paper: Paper }) => {
                               />
                             </Button>
                           </DialogTrigger>
-                          <DialogContent className="max-w-4xl max-h-screen overflow-y-auto">
+                          <DialogContent className="max-w-[95vw] lg:max-w-4xl max-h-[95vh] overflow-y-auto">
                             <div className="relative">
                               <Image
                                 src={img}

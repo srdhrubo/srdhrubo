@@ -23,7 +23,7 @@ const ProfessionalExperienceCard = ({
   return (
     <Card className="mb-6">
       <CardHeader>
-        <div className="flex justify-between items-start">
+        <div className="flex max-sm:flex-col max-sm:gap-4 justify-between items-start">
           <div>
             <CardTitle className="text-xl font-bold">
               {experience.company}

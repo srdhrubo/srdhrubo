@@ -67,8 +67,8 @@ const InstitutionCard = ({ info }: { info: AcamdemicInfo }) => {
           className="object-cover"
         />
         <div className="absolute w-full h-full bg-gradient-to-t from-white from-5% to-50%">
-          <CardHeader className="absolute bottom-0 flex flex-row items-center gap-4">
-            <div className="w-20 h-20 border flex items-center justify-center backdrop-blur bg-white/30 rounded-full shadow-lg">
+          <CardHeader className="absolute max-sm:hidden bottom-0 flex flex-row items-center gap-4">
+            <div className="w-20 h-20 aspect-square border flex items-center justify-center backdrop-blur bg-white/30 rounded-full shadow-lg">
               <Image
                 src={info.logo}
                 alt={info.logo + " Logo"}
@@ -86,18 +86,32 @@ const InstitutionCard = ({ info }: { info: AcamdemicInfo }) => {
           </CardHeader>
         </div>
       </div>
+      <CardHeader className="max-sm:block hidden">
+        <div className="space-y-2">
+          <CardTitle>{info.institution}</CardTitle>
+          <CardDescription>
+            {info.location.city}-{info.location.postalCode},{" "}
+            {info.location.country}
+          </CardDescription>
+        </div>
+      </CardHeader>
       <CardContent className="text-sm">
         {info.degree &&
           info.degree.map((degree) => (
             <p className="font-semibold" key={degree.obtainedDegree}>
-              {degree.obtainedDegree} | {degree.gradeName}:{" "}
+              {degree.obtainedDegree} <Spacer /> {degree.gradeName}:{" "}
               {degree.gradeObtained.toFixed(2)} (out of{" "}
               {degree.maxGrade.toFixed(2)}) <br />
               {degree.position &&
                 degree.totalPupil &&
                 `Postion: ${degree.position}/${degree.totalPupil}`}
-              {degree.marksPercentage &&
-                ` | Marks: ${degree.marksPercentage.toFixed(2)}%`}
+              {/* Other degree information */}
+              {degree.marksPercentage && (
+                <span>
+                  <Spacer />
+                  <span> Marks: {degree.marksPercentage.toFixed(2)}%</span>
+                </span>
+              )}
             </p>
           ))}
         {info.courseOutline && (
@@ -132,5 +146,16 @@ const InstitutionCard = ({ info }: { info: AcamdemicInfo }) => {
         </div>
       </CardFooter>
     </Card>
+  );
+};
+
+const Spacer = () => {
+  return (
+    <span>
+      <span className="max-sm:hidden">|</span>
+      <span className="max-sm:inline hidden">
+        <br />
+      </span>
+    </span>
   );
 };
